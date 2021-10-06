@@ -1,0 +1,18 @@
+{
+  "name": "mi-htmlcss-gruppuppgift-biz",
+  "version": "1.0.0",
+  "description": "Gruppuppgift i kurs HTML & CSS Medieinstitutet. Best Biz in the World!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dennis Lundgren, Elias Lyxell, Michael Miikkulainen",
+  "license": "ISC",
+  "dependencies": {
+    "csso": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0"
+  }
+}
