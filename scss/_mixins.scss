@@ -15,16 +15,17 @@
   max-width: 200px;
   border: variables.$border-main;
   flex-wrap: wrap;
-@mixin box{
-    height: 40vh;
-    width: 40vw;
-    max-width: 200px;
-    border: 2px solid black;
-    transition: transform 0.2s ease-in-out;
-        &:hover{
-            transform:scale(1.05);
-            
-        }
+}
+
+@mixin box {
+  height: 40vh;
+  width: 40vw;
+  max-width: 200px;
+  border: 2px solid black;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 @mixin tablet-only {
@@ -37,4 +38,8 @@
   @media screen and (min-width: 1200px) {
     @content;
   }
+}
+
+%transition {
+  transition: all 0.2s ease-in-out;
 }
