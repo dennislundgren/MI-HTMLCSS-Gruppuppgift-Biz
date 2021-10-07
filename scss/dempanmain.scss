@@ -1,0 +1,25 @@
+@use "mixins";
+@use "variables";
+@import url("https://use.typekit.net/ayn4xon.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+header,
+main,
+.row {
+  @include mixins.flex;
+}
+
+header {
+  height: 100px;
+  flex-direction: row;
+  justify-content: center;
+  div:first-child {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
