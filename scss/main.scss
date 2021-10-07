@@ -1,0 +1,21 @@
+@use 'mixins';
+
+header{
+    border: 2px solid black;
+}
+
+main{
+    border: 2px solid black;
+    height: 100vh;
+}
+
+.row{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+        
+}
+
+section{
+    @include mixins.mobile-box;
+}

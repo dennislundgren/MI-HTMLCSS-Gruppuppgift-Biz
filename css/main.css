@@ -1,0 +1,22 @@
+header {
+  border: 2px solid black;
+}
+
+main {
+  border: 2px solid black;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+section {
+  height: 40vh;
+  width: 44%;
+  max-width: 200px;
+  border: 2px solid black;
+  flex-wrap: wrap;
+}
