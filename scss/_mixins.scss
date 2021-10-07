@@ -1,9 +1,13 @@
-@mixin mobile-box{
+@mixin box{
     height: 40vh;
-    width: 44%;
+    width: 40vw;
     max-width: 200px;
     border: 2px solid black;
-    flex-wrap:wrap;
+    transition: transform 0.2s ease-in-out;
+        &:hover{
+            transform:scale(1.05);
+            
+        }
 }
 
 @mixin tablet-only{
