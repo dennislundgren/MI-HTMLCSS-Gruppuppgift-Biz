@@ -80,7 +80,7 @@ h3 {
   width: 40vw;
   max-width: 200px;
   border: 2px solid black;
-  transition: transform ease-in-out 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 .product:hover {
   transform: scale(1.05);
