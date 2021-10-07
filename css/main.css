@@ -2,6 +2,18 @@ header {
   border: 2px solid black;
   width: 100%;
 }
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header ul {
+  width: 30%;
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+}
 
 main {
   border: 2px solid black;
@@ -24,14 +36,13 @@ h3 {
   width: 100%;
 }
 
-section {
+.product {
   height: 40vh;
   width: 40vw;
   max-width: 200px;
   border: 2px solid black;
-  transition: transform 0.2s ease-in-out;
 }
-section:hover {
+.product:hover {
   transform: scale(1.05);
 }
 
