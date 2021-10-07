@@ -3,6 +3,35 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+header {
+  border: 2px solid black;
+  width: 100%;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header ul {
+  width: 30%;
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+}
+
+main {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+}
 
 header,
 main,
@@ -13,8 +42,8 @@ main,
 }
 @media screen and (min-width: 768px) {
   header,
-main,
-.row {
+  main,
+  .row {
     flex-direction: row;
   }
 }
@@ -50,11 +79,13 @@ h3 {
 }
 
 .product {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   height: 40vh;
   width: 40vw;
   max-width: 200px;
   border: 2px solid black;
-  transition: transform 0.2s ease-in-out;
 }
 .product:hover {
   transform: scale(1.05);
