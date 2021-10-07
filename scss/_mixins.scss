@@ -9,17 +9,20 @@
   }
 }
 
-@mixin mobile-box {
-  height: 40vh;
-  width: 44%;
-  max-width: 200px;
-  border: variables.$border-main;
-  flex-wrap: wrap;
+// @mixin mobile-box {
+//   height: 40vh;
+//   width: 44%;
+//   max-width: 200px;
+//   border: variables.$border-main;
+//   flex-wrap: wrap;
+// }
+
 @mixin box{
     height: 40vh;
     width: 40vw;
     max-width: 200px;
     border: 2px solid black;
+    transition: transform ease-in-out 0.2s;
     
         &:hover{
             transform:scale(1.05);
