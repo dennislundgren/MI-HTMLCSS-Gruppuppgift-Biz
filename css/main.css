@@ -3,13 +3,33 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+header {
+  border: 2px solid black;
+  width: 100%;
+}
+
+main {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+}
 
 header,
 main,
 .row {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   header,
@@ -28,4 +48,32 @@ header div:first-child {
   position: absolute;
   top: 20px;
   left: 20px;
+section {
+  height: 40vh;
+  width: 40vw;
+  max-width: 200px;
+  border: 2px solid black;
+  transition: transform 0.2s ease-in-out;
+}
+section:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  height: 45vh;
+  background-color: black;
+  width: 100%;
+  border: 2px solid black;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px;
 }
