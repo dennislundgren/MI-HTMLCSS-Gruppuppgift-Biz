@@ -1,21 +1,30 @@
-@mixin mobile-box{
-    height: 40vh;
-    width: 44%;
-    max-width: 200px;
-    border: 2px solid black;
-    flex-wrap:wrap;
+@use "variables";
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @include tablet-only() {
+    flex-direction: row;
+  }
 }
 
-@mixin tablet-only{
-    @media screen and (min-width: 768px) {
-        @content
-        
-    }
+@mixin mobile-box {
+  height: 40vh;
+  width: 44%;
+  max-width: 200px;
+  border: variables.$border-main;
+  flex-wrap: wrap;
 }
 
-@mixin desktop-only{
-    @media screen and (min-width: 1200px) {
-        @content
-        
-    }
+@mixin tablet-only {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
 }
