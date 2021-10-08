@@ -10,14 +10,6 @@
   }
 }
 
-// @mixin mobile-box {
-//   height: 40vh;
-//   width: 44%;
-//   max-width: 200px;
-//   border: variables.$border-main;
-//   flex-wrap: wrap;
-// }
-
 @mixin box {
   height: 40vh;
   width: clamp(300px, 40vw, 500px);
