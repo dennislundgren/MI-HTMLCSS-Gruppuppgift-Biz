@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.min.css">
     <link rel="stylesheet" href="css/main.css" />
     <title>Biz Startsida</title>
@@ -14,36 +14,49 @@
   <body>
     <header>
         <!-- Tillbakaknapp -->
-        <div onclick="back()"><i class="fas fa-long-arrow-alt-left"></i></div>
+        <div onclick="window.history.back()"><i class="fas fa-long-arrow-alt-left"></i></div>
         <!-- Logga till startsidan -->
-        <div class="logo"><img src="assets/logo_small.png" alt="Biz"></div>
+        <div class="logo"><img src="assets/logo_small.png" alt="Biz" onclick="window.location.href='https://debranch.net/neverfeltsogood';"></div>
     </header>
     <main>
       <!-- En ruta med formulär och beställningsknapp -->
       <section>
-        <form action="post">
+        <form class="needs-validation" novalidate>
           <label for="firstname">Förnamn</label>
-          <input class="form-control" type="text" name="firstname" id="firstname" />
+          <input class="form-control" type="text" name="firstname" id="firstname" required>
           <label for="lastname">Efternamn</label>
-          <input class="form-control" type="text" name="lastname" id="lastname" />
+          <input class="form-control" type="text" name="lastname" id="lastname" required/>
           <label for="email">E-post</label>
-          <input class="form-control" type="text" name="email" id="email" />
+          <input class="form-control" type="text" name="email" id="email" required/>
           <label for="adress">Address</label>
-          <input class="form-control" type="text" name="adress" id="adress" />
-          <label for="tel">Efternamn</label>
-          <input class="form-control" type="tel" name="tel" id="tel" />
+          <input class="form-control" type="text" name="adress" id="adress" required/>
+          <div class="row">
+            <div class="col-2">
+              <label for="zip">Postnummer</label>
+              <input class="form-control" type="text" name="zip" id="zip" required/>
+            </div>
+            <div class="col-3">
+              <label for="state">Postort</label>
+              <input class="form-control" type="text" name="state" id="state" required/>
+            </div>
+          </div>
+          <label for="tel">Telefonnummer</label>
+          <input class="form-control" type="tel" name="tel" id="tel" required />
+          <button class="btn btn-secondary" type="submit">Beställ</button>
         </form>
       </section>
       <!-- En ruta med prisuppgifter -->
       <section>
-        
+        <div class="product-checkout">
+          <img src="assets/logo_big.png" alt="">
+          <p>Tillgänglig</p>
+          <p>Kommer om 5 minuter</p>
+          <h3>Summa: <span>Mycket</span></h3>
+        </div>
       </section>
     </main>
-    <footer>
-      <!-- Biz copyright -->
-    </footer>
-
     <script src="js/main.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
