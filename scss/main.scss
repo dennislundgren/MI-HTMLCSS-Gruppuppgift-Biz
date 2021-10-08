@@ -23,7 +23,6 @@ width: 100%;
                 font-size: 1.3rem;
                 padding: 10px;
             }
-        }
         .alternative {
             width: 100%;  
             flex-direction: column;
@@ -34,31 +33,270 @@ width: 100%;
                     @include mixins.button;
                     border-radius: 1px;
                     background-color: white;
-                    
+            }        
         }
     }
 }
 
+header{
+    background-color: rgba(153, 153, 153, 0.164);
+    // background-image: url(https://cdn.pixabay.com/photo/2016/08/30/16/27/banner-1631299_960_720.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    .header-img{
+        display:none;
+    @include mixins.desktop-only {
+        display: inline;
+        height: 80px;
+        margin-top: -10px;
+    }
+    }
+    nav{
+        
 
-* {
-  box-sizing: border-box;
-//   margin: 0 auto;
+
+        justify-content: flex-end;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+        .search-container{
+            margin-bottom: 15px;
+        }
+        .icon-container{
+            font-size: 20pt;
+            margin-right: 20px;
+            margin-left: 8px;
+            transition: transform ease-in-out 0.2s;
+            &:hover{
+                transform:scale(1.1);
+                cursor: pointer;
+                
+            }
+        }
+        ul{
+            width: 30%;
+            list-style: none;
+            
+        }
+
+    .ul2{
+        display:none;
+    @include mixins.desktop-only {
+        width: 320px;
+        display: flex;
+        gap: 40px;
+        font-size: 20pt;
+        @include mixins.gothic;
+        .dropdown-content {
+            font-family: helvetica;
+            font-size: 11pt;
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+          }     
+        li{
+            transition: transform ease-in-out 0.2s;
+                &:hover{
+            transform:scale(1.1);
+            cursor: pointer;
+                }
+            &.dropdown {
+
+                position: relative;
+                display: inline-block;   
+                &:hover .dropdown-content {
+                    display: block;
+                  }
+                  
+              }
+            
+            }        
+        }
+    }
+}
+            
+     
+// Dennis: animation till logga.
+@keyframes biz {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-header,
-main,
-.row {
-  @include mixins.flex;
-}
-
-.row{
-    flex-direction: row;
+// Default text och storlek för text samt ikoner.
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 header {
-  height: 100px;
+  border: 1px solid black;
+  background-color: rgba(153, 153, 153, 0.164);
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .search-container {
+    margin-bottom: 15px;
+  }
+//   .icon-container {
+//     font-size: 40pt;
+//     margin-right: 20px;
+//     margin-left: 8px;
+//     transition: transform ease-in-out 0.2s;
+//     &:hover {
+//       transform: scale(1.1);
+//       cursor: pointer;
+//     }
+//   }
+  ul {
+    width: 30%;
+    list-style: none;
+    li {
+      display: block;
+    }
+  }
+}
+
+// Border-box ändrar så att padding ingår i full bredd.
+// Margin 0 auto för att centrera allt innehåll.
+* {
+  box-sizing: border-box;
+  //   margin: 0 auto;
+}
+
+// Default text för headings och meny.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include mixins.gothic;
+}
+
+header,
+nav,
+main,
+.row,
+footer {
+  @include mixins.flex;
+}
+
+.row {
   flex-direction: row;
+}
+
+header {
+  height: 80px;
   justify-content: center;
+  align-items: center;
+  border-bottom: variables.$border-main;
+  div:first-child {
+    position: absolute;
+    left: 30px;
+    cursor: pointer;
+    i {
+      font-size: 30px;
+      @extend %transition;
+      &:hover {
+        font-size: 40px;
+      }
+    }
+  }
+  .logo {
+    cursor: pointer;
+    height: 75%;
+    img {
+      height: 100%;
+    }
+    &:hover {
+      animation: biz 0.8s ease 1;
+    }
+  }
+  ul {
+    width: 30%;
+    list-style: none;
+  }
+}
+
+main {
+  padding: 50px;
+  gap: 20px;
+  flex-direction: column-reverse;
+
+  @include mixins.tablet-only {
+    flex-direction: row;
+  }
+
+  section {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 0 2px #999;
+
+    form {
+      width: 100%;
+
+      input {
+        margin-bottom: 20px;
+      }
+
+      div.row {
+        div {
+          min-width: 100px;
+        }
+      }
+    }
+}
+    div.product-checkout {
+      text-align: center;
+      width: 100%;
+
+      img {
+        width: clamp(100px, 100%, 200px);
+      }
+    }
+  
+
+  @include mixins.tablet-only {
+    section {
+      padding: 50px;
+      width: initial;
+    }
+
+    section:first-child {
+      flex-grow: 2;
+    }
+
+    section:last-child {
+      flex-grow: 1;
+      flex-basis: 300px;
+    }
+  }
+
   div:first-child {
     position: absolute;
     top: 20px;
@@ -66,19 +304,12 @@ header {
   }
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
 h1 {
   text-align: center;
   @include mixins.gothic;
   width: 100%;
-  @include mixins.tablet-only{
-      margin-left: 15%;
+  @include mixins.tablet-only {
+    margin-left: 15%;
   }
 }
 
@@ -103,21 +334,31 @@ h1 {
         border: 2px solid black;
     }
 }
-    
-
-.product{
-    @include mixins.box;
-    border-radius: 5px;
+.navbar {
+  display: none;
+  @include mixins.tablet-only {
+    display: inline;
+    width: 15%;
+    height: 400px;
+    border: 2px solid black;
+  }
 }
+
+.product {
+  @include mixins.box;
+  border-radius: 5px;
+}
+
 .row {
-  display: flex;
-  justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
   width: 100%;
-   @include mixins.tablet-only{
-       width: 80%;
-   }
+}
+
+footer {
+  border-top: variables.$border-main;
+  @include mixins.tablet-only {
+    width: 80%;
+  }
 }
 
 footer {
@@ -130,19 +371,19 @@ footer {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-    .img-container{
-        width: 20%;
-        margin-top: 40px;
-        img{
-            width: 100%;
-        }
+  .img-container {
+    width: 20%;
+    margin-top: 40px;
+    img {
+      width: 100%;
     }
+  }
 }
 
 p {
   margin: 5px;
 }
 
-img{
-    height: 100%;
+img {
+  height: 100%;
 }
