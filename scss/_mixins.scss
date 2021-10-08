@@ -19,9 +19,9 @@
 
 @mixin box{
     height: 40vh;
-    width: 40vw;
-    max-width: 200px;
+    width: clamp(300px, 40vw, 500px);
     border: 2px solid black;
+    border-radius: 10px;
     transition: transform ease-in-out 0.2s;
     
         &:hover{
@@ -29,7 +29,7 @@
             
         }
     }
-    
+
 @mixin mobile-box {
   height: 40vh;
   width: 44%;
@@ -42,7 +42,7 @@
   height: 40vh;
   width: 40vw;
   max-width: 200px;
-  border: 2px solid black;
+  box-shadow: 0 0 2px #999;
   transition: transform 0.2s ease-in-out;
   &:hover {
     transform: scale(1.05);
@@ -63,4 +63,10 @@
 
 %transition {
   transition: all 0.2s ease-in-out;
+}
+
+@mixin gothic {
+  font-family: league-gothic, sans-serif; 
+  font-weight: 400;
+  font-style: normal;
 }
