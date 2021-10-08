@@ -27,40 +27,35 @@ header .header-img {
     margin-top: -10px;
   }
 }
-
-nav {
+header nav {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.search-container {
+header .search-container {
   margin-bottom: 15px;
 }
-
-.icon-container {
-  font-size: 25pt;
+header .icon-container {
+  font-size: 20pt;
   margin-right: 20px;
   margin-left: 8px;
   transition: transform ease-in-out 0.2s;
 }
-.icon-container:hover {
+header .icon-container:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-
-ul {
+header ul {
   width: 30%;
   list-style: none;
 }
-
-.ul2 {
+header .ul2 {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  .ul2 {
+  header .ul2 {
     width: 320px;
     display: flex;
     gap: 40px;
@@ -69,7 +64,7 @@ ul {
     font-weight: 400;
     font-style: normal;
   }
-  .ul2 .dropdown-content {
+  header .ul2 .dropdown-content {
     font-family: helvetica;
     font-size: 11pt;
     display: none;
@@ -80,18 +75,18 @@ ul {
     padding: 12px 16px;
     z-index: 1;
   }
-  .ul2 li {
+  header .ul2 li {
     transition: transform ease-in-out 0.2s;
   }
-  .ul2 li:hover {
+  header .ul2 li:hover {
     transform: scale(1.1);
     cursor: pointer;
   }
-  .ul2 li.dropdown {
+  header .ul2 li.dropdown {
     position: relative;
     display: inline-block;
   }
-  .ul2 li.dropdown:hover .dropdown-content {
+  header .ul2 li.dropdown:hover .dropdown-content {
     display: block;
   }
 }
@@ -135,22 +130,12 @@ header nav {
 header .search-container {
   margin-bottom: 15px;
 }
-header .icon-container {
-  font-size: 40pt;
-  margin-right: 20px;
-  margin-left: 8px;
-  transition: transform ease-in-out 0.2s;
-}
-header .icon-container:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
 header ul {
   width: 30%;
   list-style: none;
 }
 header ul li {
-  display: inline-block;
+  display: block;
 }
 
 * {
@@ -221,9 +206,6 @@ header .logo:hover {
 header ul {
   width: 30%;
   list-style: none;
-}
-header ul li {
-  display: inline-block;
 }
 
 main {
