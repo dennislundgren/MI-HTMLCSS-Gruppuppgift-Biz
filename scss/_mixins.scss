@@ -21,7 +21,6 @@
     height: 40vh;
     width: clamp(300px, 40vw, 500px);
     border: 2px solid black;
-    border-radius: 10px;
     transition: transform ease-in-out 0.2s;
     
         &:hover{
