@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  @extend %transition;
   @include tablet-only() {
     flex-direction: row;
   }
@@ -21,8 +22,7 @@
   height: 40vh;
   width: 40vw;
   max-width: 200px;
-  border: 2px solid black;
-  transition: transform 0.2s ease-in-out;
+  @extend %transition;
   &:hover {
     transform: scale(1.05);
   }
@@ -42,4 +42,10 @@
 
 %transition {
   transition: all 0.2s ease-in-out;
+}
+
+@mixin league-gothic {
+  font-family: league-gothic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

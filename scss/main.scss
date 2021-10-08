@@ -2,54 +2,140 @@
 @use "variables";
 @import url("https://use.typekit.net/ayn4xon.css");
 
-header{
-    border: 2px solid black;
-    width: 100%;
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-        ul{
-            width: 30%;
-            list-style: none;
-                li{
-                    display: inline-block;
-                }
-            }
-     
-        //    .search-container{
-        //         display: flex;
-        //         justify-content: flex-end;
-        //         width: 100%;
-        //         margin-right: 10px;
-        // }
+// Dennis: animation till logga.
+@keyframes biz {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
+// Default text och storlek för text samt ikoner.
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+// Border-box ändrar så att padding ingår i full bredd.
+// Margin 0 auto för att centrera allt innehåll.
 * {
   box-sizing: border-box;
   margin: 0 auto;
 }
 
+// Default text för headings och meny.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header nav > ul {
+  @include mixins.league-gothic;
+}
+
 header,
+nav,
 main,
-.row {
+.row,
+footer {
   @include mixins.flex;
 }
 
 header {
-  height: 100px;
-  flex-direction: row;
+  height: 80px;
   justify-content: center;
   align-items: center;
+  border-bottom: variables.$border-main;
   div:first-child {
-    justify-self: flex-start;
+    position: absolute;
+    left: 30px;
     cursor: pointer;
+    i {
+      font-size: 30px;
+      @extend %transition;
+      &:hover {
+        font-size: 40px;
+      }
+    }
   }
   .logo {
-    height: 80%;
+    cursor: pointer;
+    height: 75%;
     img {
       height: 100%;
+    }
+    &:hover {
+      animation: biz 0.8s ease 1;
+    }
+  }
+
+  ul {
+    width: 30%;
+    list-style: none;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+main {
+  padding: 50px;
+  gap: 20px;
+  flex-direction: column-reverse;
+  @include mixins.tablet-only {
+    flex-direction: row;
+  }
+  section {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 0 2px #999;
+    form {
+      width: 100%;
+      input {
+        margin-bottom: 20px;
+      }
+      div.row {
+        div {
+          min-width: 100px;
+        }
+      }
+    }
+    div.product-checkout {
+      text-align: center;
+      width: 100%;
+      img {
+        width: clamp(100px, 100%, 200px);
+      }
+    }
+  }
+  @include mixins.tablet-only {
+    section {
+      padding: 50px;
+      width: initial;
+    }
+    section:first-child {
+      flex-grow: 2;
+    }
+    section:last-child {
+      flex-grow: 1;
+      flex-basis: 300px;
     }
   }
 }
@@ -59,32 +145,14 @@ h3 {
   width: 100%;
 }
 
-.product{
-    @include mixins.box;
-}
-.row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
 .product {
   @include mixins.box;
 }
+.row {
+  gap: 20px;
+  width: 100%;
+}
 
 footer {
-  height: 45vh;
-  background-color: black;
-  width: 100%;
-  border: 2px solid black;
-  color: white;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  border-top: variables.$border-main;
 }
