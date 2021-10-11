@@ -13,12 +13,17 @@ body {
 }
 
 header {
-  background-image: url(https://cdn.pixabay.com/photo/2016/08/30/16/27/banner-1631299_960_720.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(153, 153, 153, 0.164);
 }
 header .header-img {
+  width: 120px;
   display: none;
+}
+header .header-img img {
+  width: 100%;
+}
+header .header-img img:hover {
+  animation: biz 0.8s ease 1;
 }
 @media screen and (min-width: 1200px) {
   header .header-img {
@@ -74,6 +79,9 @@ header .ul2 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
+  }
+  header .ul2 .dropdown-content li:hover {
+    background-color: rgba(153, 153, 153, 0.164);
   }
   header .ul2 li {
     transition: transform ease-in-out 0.2s;
@@ -213,6 +221,10 @@ main {
   gap: 20px;
   flex-direction: column-reverse;
 }
+main .navbar {
+  position: sticky;
+  top: 50px;
+}
 @media screen and (min-width: 768px) {
   main {
     flex-direction: row;
@@ -221,7 +233,6 @@ main {
 main section {
   margin-bottom: 20px;
   border-radius: 5px;
-  padding: 30px;
   width: 100%;
   box-shadow: 0 0 2px #999;
 }
@@ -243,7 +254,6 @@ main section div.product-checkout img {
 }
 @media screen and (min-width: 768px) {
   main section {
-    padding: 50px;
     width: initial;
   }
   main section:first-child {
@@ -265,11 +275,11 @@ h1 {
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
-  width: 100%;
+  width: 95%;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    margin-left: 15%;
+    margin-left: 8%;
   }
 }
 
@@ -295,11 +305,12 @@ h1 {
 }
 .product:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .row {
   gap: 20px;
-  width: 100%;
+  width: 80%;
 }
 
 footer {
@@ -307,7 +318,7 @@ footer {
 }
 @media screen and (min-width: 768px) {
   footer {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -334,6 +345,6 @@ p {
   margin: 5px;
 }
 
-img {
-  height: 100%;
+.product img {
+  width: 100%;
 }
