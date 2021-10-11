@@ -47,6 +47,7 @@ h6 {
   @include mixins.gothic;
 }
 
+// Display flex.
 header,
 nav,
 main,
@@ -55,63 +56,85 @@ footer {
   @include mixins.flex;
 }
 
+// All sass relevant för header.
 header {
   background-color: rgba(153, 153, 153, 0.164);
   height: 80px;
   justify-content: center;
   align-items: center;
   border-bottom: variables.$border-main;
+  flex-direction: row;
+
+  // Sökboxen.
   .search-container {
     margin-bottom: 15px;
   }
+
+  // Img-header i produkt och index.
   .header-img {
     display: none;
+    margin: revert;
+
     @include mixins.desktop-only {
       display: inline;
       height: 80px;
-      margin-top: -10px;
-      img{
-        width: 100%;
-        &:hover{
-        animation: biz 0.8s ease 1;
+      // margin-top: -10px;
+
+      img {
+        // width: 100%;
+        height: 100%;
+
+        &:hover {
+          animation: biz 0.8s ease 1;
         }
+      }
     }
   }
+
+  // Navigation i header.
   nav {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     font-family: Arial, Helvetica, sans-serif;
+    flex-direction: row;
   }
-  .search-container{
-    margin-bottom: 15px;
-}
+
+  // Ikoner i header samt effekt vid hover.
   .icon-container {
-    font-size: 40pt;
-    margin-right: 20px;
-    margin-left: 8px;
+    font-size: 20pt;
+    margin: 0 20px 0 20px;
     transition: transform ease-in-out 0.2s;
+
     &:hover {
       transform: scale(1.1);
       cursor: pointer;
     }
   }
+
+  // Deklarerat lista i header.
   ul {
     width: 30%;
     list-style: none;
-    li {
-      display: inline-block;
-    }
   }
+
+  // Detta är lista i header vid hover på sortiment.
   .ul2 {
     display: none;
-    @include mixins.desktop-only {
+    margin: revert;
+    margin-right: 20px;
+
+    // Stil för lista i desktop-läge.
+    @include mixins.tablet-only {
       width: 320px;
       display: flex;
       gap: 40px;
       font-size: 20pt;
       @include mixins.gothic;
+
+      // Hur listan i header visas.
       .dropdown-content {
         font-family: helvetica;
         font-size: 11pt;
@@ -122,19 +145,24 @@ header {
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         padding: 12px 16px;
         z-index: 1;
-        li:hover{
-          background-color:rgba(153, 153, 153, 0.164);
+
+        li:hover {
+          background-color: rgba(153, 153, 153, 0.164);
+        }
       }
-      }
+
       li {
         transition: transform ease-in-out 0.2s;
+
         &:hover {
           transform: scale(1.1);
           cursor: pointer;
         }
+
         &.dropdown {
           position: relative;
           display: inline-block;
+
           &:hover .dropdown-content {
             display: block;
           }
@@ -142,50 +170,75 @@ header {
       }
     }
   }
+
+  // Default för första div-elementet i headern, tillbakaknapp samt hamburgare.
   div:first-child {
     position: absolute;
     left: 30px;
     cursor: pointer;
+
     i {
       font-size: 30px;
       @extend %transition;
+
       &:hover {
         font-size: 40px;
       }
     }
   }
+
+  // Effekt för logo.
   .logo {
     cursor: pointer;
     height: 75%;
+
     img {
       height: 100%;
     }
+
     &:hover {
       animation: biz 0.8s ease 1;
     }
   }
 }
 
+// Allt sass relevant för mainblocket.
 main {
-  padding: 50px;
+  padding: 5px;
   gap: 20px;
   flex-direction: column-reverse;
-    .navbar{
-        position: sticky;
-        top: 50px;
-    }
 
-  @include mixins.desktop-only {
-    flex-direction: row;
+  // Design för produktheadern i main.
+  .product-header {
+    text-align: center;
+    @include mixins.gothic;
+    width: 95%;
+    @include mixins.tablet-only {
+      margin-left: 8%;
+    }
   }
 
+  // Design för navbar i produktsida.
+  .navbar {
+    display: none;
+    position: sticky;
+    top: 50px;
+    @include mixins.tablet-only {
+      display: inline;
+      width: 15%;
+      height: 400px;
+      border: 2px solid black;
+    }
+  }
+
+  // Default-stil för sektioner i main.
   section {
-    margin-bottom: 20px;
     border-radius: 5px;
-    // padding: 30px;
+    padding: 30px;
     width: 100%;
     box-shadow: 0 0 2px #999;
 
+    // Ytterligare stil för formulär.
     form {
       width: 100%;
 
@@ -205,7 +258,6 @@ main {
         display: block;
       }
       .select-menu {
-        flex-direction: row;
         .form-select {
           display: inline-block;
           width: 80px;
@@ -218,6 +270,7 @@ main {
       }
     }
 
+    // Bild i checkout för tjänst som beställs.
     div.product-checkout {
       text-align: center;
       width: 100%;
@@ -227,6 +280,7 @@ main {
       }
     }
 
+    // Visar ifall tjänsten är tillgänglig eller ej.
     .available {
       color: green;
     }
@@ -235,7 +289,27 @@ main {
     }
   }
 
-  @include mixins.tablet-only {
+  // Produkter i produktsidan.
+  .product {
+    @include mixins.box;
+    border-radius: 5px;
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  // Row-klass i produktsidan.
+  .row {
+    gap: 20px;
+    width: 80%;
+  }
+
+  // Stil då vi går över till tablet-storlek.
+  @include mixins.desktop-only {
+    flex-direction: row;
+    padding: 30px;
+
     section {
       width: initial;
     }
@@ -249,38 +323,6 @@ main {
       flex-basis: 300px;
     }
   }
-}
-
-.product-header {
-  text-align: center;
-  @include mixins.gothic;
-  width: 95%;
-  @include mixins.tablet-only {
-      margin-left: 8%;
-  }
-}
-
-.navbar {
-  display: none;
-  @include mixins.tablet-only {
-    display: inline;
-    width: 15%;
-    height: 400px;
-    border: 2px solid black;
-  }
-}
-
-.product {
-  @include mixins.box;
-  border-radius: 5px;
-  img{
-    width: 100%;
-}
-}
-
-.row {
-  gap: 20px;
-  width: 80%;
 }
 
 footer {
@@ -303,5 +345,4 @@ footer {
       width: 100%;
     }
   }
-}
 }
