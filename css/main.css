@@ -2,8 +2,8 @@
 header,
 nav,
 main,
-.row,
-footer, header .ul2 .fas.fa-caret-down, header div:first-child i, main section .product {
+.product-row,
+footer, header .ul2 .fas.fa-caret-down, header div:first-child i, header .burger-wrapper .burger, header .burger-wrapper .burger::before, header .burger-wrapper .burger::after, section .product {
   transition: all 0.2s ease-in-out;
 }
 
@@ -51,7 +51,7 @@ h6 {
 header,
 nav,
 main,
-.row,
+.product-row,
 footer {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ footer {
   header,
 nav,
 main,
-.row,
+.product-row,
 footer {
     flex-direction: row;
   }
@@ -115,6 +115,7 @@ header .icon-container:hover {
 header ul {
   width: 30%;
   list-style: none;
+  z-index: 1;
 }
 header .ul2 {
   display: none;
@@ -127,7 +128,7 @@ header .ul2 .fas.fa-caret-down {
 header .ul2 li:first-child:hover .fas.fa-caret-down {
   transform: rotate(180deg);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   header .ul2 {
     width: 320px;
     display: flex;
@@ -187,6 +188,88 @@ header .logo img {
 header .logo:hover {
   animation: biz 0.8s ease 1;
 }
+header input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+}
+header input[type=checkbox]:checked ~ nav ul {
+  position: absolute;
+  top: 80px;
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+header input[type=checkbox]:checked ~ nav ul ul {
+  position: relative;
+  display: none;
+  top: 0;
+  margin-bottom: 20px;
+}
+header input[type=checkbox]:checked ~ nav ul li:first-child:hover ul,
+header input[type=checkbox]:checked ~ nav ul li:first-child:focus ul {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  header input[type=checkbox] {
+    display: none;
+  }
+}
+header .burger-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  header .burger-wrapper {
+    display: none;
+  }
+}
+header .burger-wrapper .burger {
+  position: relative;
+  left: 0;
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header .burger-wrapper .burger::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-10px);
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header .burger-wrapper .burger::after {
+  content: "";
+  position: absolute;
+  transform: translateY(10px);
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger {
+  width: 0;
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger::before {
+  transform: rotate(45deg) translate(-17px, 17px);
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
+  transform: rotate(-45deg) translate(-17px, -17px);
+}
 
 .home-wrapper {
   display: flex;
@@ -244,7 +327,7 @@ main .product-header {
 }
 @media screen and (min-width: 768px) {
   main .product-header {
-    margin-left: 8%;
+    margin-left: 20.5%;
   }
 }
 main .navbar {
@@ -252,67 +335,70 @@ main .navbar {
   position: sticky;
   top: 50px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   main .navbar {
     display: inline;
     width: 15%;
-    height: 300px;
+    height: 100%;
     border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
   }
   main .navbar h2 {
-    margin: 20px;
+    margin: 14px;
+    margin-left: -12px;
   }
 }
-main section {
+
+section {
   border-radius: 5px;
   padding: 30px;
   width: 100%;
   box-shadow: 0 0 2px #999;
 }
-main section form {
+section form {
   width: 100%;
 }
-main section form input {
+section form input {
   margin-bottom: 20px;
 }
-main section form div.row {
+section form div.row {
   width: initial;
   margin: initial;
   padding: initial;
 }
-main section form div.row div {
+section form div.row div {
   min-width: 100px;
 }
-main section form label[for=tel] {
+section form label[for=tel] {
   display: block;
 }
-main section form .select-menu .form-select {
+section form .select-menu .form-select {
   display: inline-block;
   width: 80px;
   height: 38px;
 }
-main section form .select-menu input[type=tel].form-control {
+section form .select-menu input[type=tel].form-control {
   display: inline-block;
   width: calc(100% - 80px);
 }
-main section div.product-checkout {
+section div.product-checkout {
   text-align: center;
   width: 100%;
 }
-main section div.product-checkout i {
+section div.product-checkout i {
   padding-top: 10px;
 }
-main section div.product-checkout div:nth-child(2) {
+section div.product-checkout div:nth-child(2) {
   margin-top: 20px;
 }
-main section .available {
+section .available {
   color: green;
 }
-main section .not-available {
+section .not-available {
   color: red;
 }
-main section .product {
+section .product {
   position: relative;
   height: 400px;
   width: 100%;
@@ -323,53 +409,54 @@ main section .product {
   border-radius: 5px;
   overflow: hidden;
 }
-main section .product:hover {
+section .product:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  main section .product {
+  section .product {
     width: 300px;
   }
 }
-main section .product img {
+section .product img {
   width: 100%;
   border-radius: 5px;
 }
-main section .product .product-info {
+section .product .product-info {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   background-color: white;
-  width: 80%;
+  width: 100%;
   height: 80px;
   border-radius: 5px;
   text-align: center;
 }
-main section .row {
+section .product-row {
   gap: 20px;
   width: 80%;
 }
 @media screen and (min-width: 1200px) {
-  main section {
+  section {
     flex-direction: row;
     padding: 30px;
   }
-  main section section {
+  section section {
     width: initial;
   }
-  main section section:first-child {
+  section section:first-child {
     flex-grow: 1;
   }
-  main section section:last-child {
+  section section:last-child {
     flex-grow: 1;
     flex-basis: 300px;
   }
 }
-main li {
+
+li {
   transition: transform ease-in-out 0.2s;
   list-style: none;
 }
-main li:hover {
+li:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -392,10 +479,11 @@ footer .footer-wrapper div {
 footer .footer-wrapper div .text-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: left;
   width: 100%;
 }
 footer .footer-wrapper div .text-wrapper p {
-  padding: 10px;
+  padding: px;
 }
 footer .footer-wrapper div .text-wrapper .fa {
   padding: 9px;
@@ -406,4 +494,5 @@ footer .footer-wrapper div .text-wrapper a {
   flex-direction: row;
   align-items: center;
   text-decoration: none;
+  color: black;
 }
