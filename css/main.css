@@ -3,14 +3,113 @@ header,
 nav,
 main,
 .row,
-footer,
-header div:first-child i,
-.product {
+footer, header div:first-child i, .product {
   transition: all 0.2s ease-in-out;
+}
+
+@keyframes biz {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: league-gothic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header,
+nav,
+main,
+.row,
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  header,
+nav,
+main,
+.row,
+footer {
+    flex-direction: row;
+  }
+}
+
+header {
+  background-color: rgba(153, 153, 153, 0.164);
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+header .search-container {
+  margin-bottom: 15px;
+}
+header .header-img {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  header .header-img {
+    display: inline;
+    height: 80px;
+    margin-top: -10px;
+  }
+}
+header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header .icon-container {
+  font-size: 40pt;
+  margin-right: 20px;
+  margin-left: 8px;
+  transition: transform ease-in-out 0.2s;
+}
+header .icon-container:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 header ul {
   width: 30%;
   list-style: none;
+}
+header ul li {
+  display: inline-block;
 }
 header .ul2 {
   display: none;
@@ -50,115 +149,6 @@ header .ul2 {
   header .ul2 li.dropdown:hover .dropdown-content {
     display: block;
   }
-}
-
-@keyframes biz {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.95);
-  }
-  20% {
-    transform: scale(1.05);
-  }
-  30% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-header {
-  border: 1px solid black;
-  background-color: rgba(153, 153, 153, 0.164);
-}
-header nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: Arial, Helvetica, sans-serif;
-}
-header .search-container {
-  margin-bottom: 15px;
-}
-header ul {
-  width: 30%;
-  list-style: none;
-}
-header ul li {
-  display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: league-gothic, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-header,
-nav,
-main,
-.row,
-footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-@media screen and (min-width: 768px) {
-  header,
-  nav,
-  main,
-  .row,
-  footer {
-    flex-direction: row;
-  }
-}
-
-header {
-  background-color: rgba(153, 153, 153, 0.164);
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-header .search-container {
-  margin-bottom: 15px;
-}
-header .icon-container {
-  font-size: 40pt;
-  margin-right: 20px;
-  margin-left: 8px;
-  transition: transform ease-in-out 0.2s;
-}
-header .icon-container:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-header ul {
-  width: 30%;
-  list-style: none;
-}
-header ul li {
-  display: inline-block;
 }
 header div:first-child {
   position: absolute;
@@ -213,7 +203,7 @@ main section form div.row {
 main section form div.row div {
   min-width: 100px;
 }
-main section form label[for="tel"] {
+main section form label[for=tel] {
   display: block;
 }
 main section form .select-menu {
@@ -224,7 +214,7 @@ main section form .select-menu .form-select {
   width: 80px;
   height: 38px;
 }
-main section form .select-menu input[type="tel"].form-control {
+main section form .select-menu input[type=tel].form-control {
   display: inline-block;
   width: calc(100% - 80px);
 }
@@ -258,13 +248,8 @@ main section .not-available {
     flex-basis: 300px;
   }
 }
-main div:first-child {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
 
-h1 {
+.product-header {
   text-align: center;
   font-family: league-gothic, sans-serif;
   font-weight: 400;
@@ -272,7 +257,7 @@ h1 {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  h1 {
+  .product-header {
     margin-left: 15%;
   }
 }
@@ -302,15 +287,6 @@ h1 {
 }
 
 footer {
-  border-top: 1px solid black;
-}
-@media screen and (min-width: 768px) {
-  footer {
-    width: 80%;
-  }
-}
-
-footer {
   background-color: white;
   margin-top: 50px;
   display: flex;
@@ -319,6 +295,12 @@ footer {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  border-top: 1px solid black;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    width: 80%;
+  }
 }
 footer .img-container {
   width: 20%;
