@@ -258,8 +258,11 @@ main section div.product-checkout {
   text-align: center;
   width: 100%;
 }
-main section div.product-checkout img {
-  width: clamp(100px, 100%, 200px);
+main section div.product-checkout i {
+  padding-top: 10px;
+}
+main section div.product-checkout div:nth-child(2) {
+  margin-top: 20px;
 }
 main section .available {
   color: green;
@@ -268,6 +271,7 @@ main section .not-available {
   color: red;
 }
 main .product {
+  position: relative;
   height: 400px;
   width: 100%;
   display: flex;
@@ -289,6 +293,15 @@ main .product:hover {
 main .product img {
   width: 100%;
   border-radius: 5px;
+}
+main .product .product-info {
+  position: absolute;
+  bottom: 20px;
+  background-color: white;
+  width: 80%;
+  height: 80px;
+  border-radius: 5px;
+  text-align: center;
 }
 main .row {
   gap: 20px;

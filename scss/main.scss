@@ -125,14 +125,13 @@ header {
     display: none;
     margin: revert;
     margin-right: 20px;
-    .fas.fa-caret-down{
+    .fas.fa-caret-down {
       margin-left: 6px;
       @extend %transition;
     }
 
-    li:first-child:hover .fas.fa-caret-down{
-        transform: rotate(180deg);
-    
+    li:first-child:hover .fas.fa-caret-down {
+      transform: rotate(180deg);
     }
 
     // Stil för lista i desktop-läge.
@@ -167,7 +166,6 @@ header {
           transform: scale(1.1);
           cursor: pointer;
         }
-
 
         &.dropdown {
           position: relative;
@@ -212,7 +210,6 @@ header {
   }
 }
 
-
 // Allt sass relevant för mainblocket.
 main {
   padding: 5px;
@@ -240,7 +237,7 @@ main {
       height: 300px;
       border: variables.$border-main;
       border-radius: variables.$border-radius;
-      h2{
+      h2 {
         margin: 20px;
       }
     }
@@ -289,9 +286,11 @@ main {
     div.product-checkout {
       text-align: center;
       width: 100%;
-
-      img {
-        width: clamp(100px, 100%, 200px);
+      i {
+        padding-top: 10px;
+      }
+      div:nth-child(2) {
+        margin-top: 20px;
       }
     }
 
@@ -306,12 +305,22 @@ main {
 
   // Produkter i produktsidan.
   .product {
+    position: relative;
     @include mixins.box;
     border-radius: 5px;
     overflow: hidden;
     img {
       width: 100%;
       border-radius: 5px;
+    }
+    .product-info {
+      position: absolute;
+      bottom: 20px;
+      background-color: white;
+      width: 80%;
+      height: 80px;
+      border-radius: 5px;
+      text-align: center;
     }
   }
 
@@ -373,5 +382,3 @@ li {
     cursor: pointer;
   }
 }
-
-
