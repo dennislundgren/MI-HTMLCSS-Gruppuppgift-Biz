@@ -136,7 +136,7 @@ header {
     }
 
     // Stil för lista i desktop-läge.
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       width: 320px;
       display: flex;
       gap: 40px;
@@ -306,7 +306,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.tablet-only {
-      margin-left: 8%;
+      margin-left: 20.5%;
     }
   }
 
@@ -315,14 +315,16 @@ main {
     display: none;
     position: sticky;
     top: 50px;
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       display: inline;
       width: 15%;
       height: 100%;
       border: variables.$border-main;
       border-radius: variables.$border-radius;
+      box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
       h2 {
-        margin: 20px;
+        margin: 14px;
+        margin-left: -12px;
       }
     }
   }
@@ -399,9 +401,9 @@ main {
     }
     .product-info {
       position: absolute;
-      bottom: 20px;
+      bottom: 0px;
       background-color: white;
-      width: 80%;
+      width: 100%;
       height: 80px;
       border-radius: 5px;
       text-align: center;
