@@ -225,7 +225,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.tablet-only {
-      margin-left: 8%;
+      margin-left: 17%;
     }
   }
 
@@ -317,7 +317,7 @@ main {
 
   // Row-klass i produktsidan.
   .row {
-    gap: 20px;
+    row-gap: 80px;
     width: 80%;
   }
 

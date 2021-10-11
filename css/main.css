@@ -202,7 +202,7 @@ main .product-header {
 }
 @media screen and (min-width: 768px) {
   main .product-header {
-    margin-left: 8%;
+    margin-left: 17%;
   }
 }
 main .navbar {
@@ -291,7 +291,7 @@ main .product img {
   border-radius: 5px;
 }
 main .row {
-  gap: 20px;
+  row-gap: 80px;
   width: 80%;
 }
 @media screen and (min-width: 1200px) {
