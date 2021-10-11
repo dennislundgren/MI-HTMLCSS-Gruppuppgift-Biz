@@ -3,7 +3,7 @@ header,
 nav,
 main,
 .row,
-footer, header div:first-child i, main .product {
+footer, header .ul2 .fas.fa-caret-down, header div:first-child i, main .product {
   transition: all 0.2s ease-in-out;
 }
 
@@ -120,6 +120,12 @@ header .ul2 {
   display: none;
   margin: revert;
   margin-right: 20px;
+}
+header .ul2 .fas.fa-caret-down {
+  margin-left: 6px;
+}
+header .ul2 li:first-child:hover .fas.fa-caret-down {
+  transform: rotate(180deg);
 }
 @media screen and (min-width: 768px) {
   header .ul2 {

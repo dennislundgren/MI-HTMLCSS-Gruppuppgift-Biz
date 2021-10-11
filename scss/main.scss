@@ -125,6 +125,15 @@ header {
     display: none;
     margin: revert;
     margin-right: 20px;
+    .fas.fa-caret-down{
+      margin-left: 6px;
+      @extend %transition;
+    }
+
+    li:first-child:hover .fas.fa-caret-down{
+        transform: rotate(180deg);
+    
+    }
 
     // Stil för lista i desktop-läge.
     @include mixins.tablet-only {
