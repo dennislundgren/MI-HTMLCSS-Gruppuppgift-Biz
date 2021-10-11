@@ -47,6 +47,7 @@ h4,
 h5,
 h6 {
   @include mixins.gothic;
+  font-size: revert;
 }
 
 // Display flex.
@@ -237,7 +238,7 @@ header {
         display: block;
       }
     }
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       display: none;
     }
   }
@@ -252,7 +253,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       display: none;
     }
     .burger {
@@ -337,15 +338,20 @@ width: 100%;
 main {
   padding: 5px;
   gap: 20px;
-  flex-direction: column-reverse;
+
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
 
   // Design för produktheadern i main.
   .product-header {
+    margin-top: 20px;
     text-align: center;
     @include mixins.gothic;
     width: 95%;
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       margin-left: 20.5%;
+      margin-top: 0;
     }
   }
 
@@ -446,6 +452,10 @@ main {
       height: 80px;
       border-radius: 5px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
 

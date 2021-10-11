@@ -46,6 +46,7 @@ h6 {
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: revert;
 }
 
 header,
@@ -214,7 +215,7 @@ header input[type=checkbox]:checked ~ nav ul li:first-child:hover ul,
 header input[type=checkbox]:checked ~ nav ul li:first-child:focus ul {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   header input[type=checkbox] {
     display: none;
   }
@@ -230,7 +231,7 @@ header .burger-wrapper {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   header .burger-wrapper {
     display: none;
   }
@@ -316,18 +317,22 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
 main {
   padding: 5px;
   gap: 20px;
+}
+main .column-reverse {
   flex-direction: column-reverse;
 }
 main .product-header {
+  margin-top: 20px;
   text-align: center;
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 95%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   main .product-header {
     margin-left: 20.5%;
+    margin-top: 0;
   }
 }
 main .navbar {
@@ -430,6 +435,10 @@ section .product .product-info {
   height: 80px;
   border-radius: 5px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 section .product-row {
   gap: 20px;
