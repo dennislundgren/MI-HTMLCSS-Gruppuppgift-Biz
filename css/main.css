@@ -7,13 +7,78 @@ footer, header div:first-child i, .product {
   transition: all 0.2s ease-in-out;
 }
 
-body {
-  margin: 0px;
-  box-shadow: 0 0 2px #999;
+@keyframes biz {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: league-gothic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header,
+nav,
+main,
+.row,
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  header,
+nav,
+main,
+.row,
+footer {
+    flex-direction: row;
+  }
 }
 
 header {
   background-color: rgba(153, 153, 153, 0.164);
+<<<<<<< HEAD
+=======
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+header .search-container {
+  margin-bottom: 15px;
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
 }
 header .header-img {
   width: 120px;
@@ -39,11 +104,8 @@ header nav {
   justify-content: flex-end;
   font-family: Arial, Helvetica, sans-serif;
 }
-header .search-container {
-  margin-bottom: 15px;
-}
 header .icon-container {
-  font-size: 20pt;
+  font-size: 40pt;
   margin-right: 20px;
   margin-left: 8px;
   transition: transform ease-in-out 0.2s;
@@ -55,6 +117,9 @@ header .icon-container:hover {
 header ul {
   width: 30%;
   list-style: none;
+}
+header ul li {
+  display: inline-block;
 }
 header .ul2 {
   display: none;
@@ -98,98 +163,6 @@ header .ul2 {
     display: block;
   }
 }
-
-@keyframes biz {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.95);
-  }
-  20% {
-    transform: scale(1.05);
-  }
-  30% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-header {
-  border: 1px solid black;
-  background-color: rgba(153, 153, 153, 0.164);
-}
-header nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: Arial, Helvetica, sans-serif;
-}
-header .search-container {
-  margin-bottom: 15px;
-}
-header ul {
-  width: 30%;
-  list-style: none;
-}
-header ul li {
-  display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: league-gothic, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-header,
-nav,
-main,
-.row,
-footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-@media screen and (min-width: 768px) {
-  header,
-nav,
-main,
-.row,
-footer {
-    flex-direction: row;
-  }
-}
-
-.row {
-  flex-direction: row;
-}
-
-header {
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
 header div:first-child {
   position: absolute;
   left: 30px;
@@ -211,21 +184,21 @@ header .logo img {
 header .logo:hover {
   animation: biz 0.8s ease 1;
 }
-header ul {
-  width: 30%;
-  list-style: none;
-}
 
 main {
   padding: 50px;
   gap: 20px;
   flex-direction: column-reverse;
 }
+<<<<<<< HEAD
 main .navbar {
   position: sticky;
   top: 50px;
 }
 @media screen and (min-width: 768px) {
+=======
+@media screen and (min-width: 1200px) {
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
   main {
     flex-direction: row;
   }
@@ -242,8 +215,28 @@ main section form {
 main section form input {
   margin-bottom: 20px;
 }
+main section form div.row {
+  width: initial;
+  margin: initial;
+  padding: initial;
+}
 main section form div.row div {
   min-width: 100px;
+}
+main section form label[for=tel] {
+  display: block;
+}
+main section form .select-menu {
+  flex-direction: row;
+}
+main section form .select-menu .form-select {
+  display: inline-block;
+  width: 80px;
+  height: 38px;
+}
+main section form .select-menu input[type=tel].form-control {
+  display: inline-block;
+  width: calc(100% - 80px);
 }
 main section div.product-checkout {
   text-align: center;
@@ -252,25 +245,34 @@ main section div.product-checkout {
 main section div.product-checkout img {
   width: clamp(100px, 100%, 200px);
 }
+main section .available {
+  color: green;
+}
+main section .not-available {
+  color: red;
+}
 @media screen and (min-width: 768px) {
   main section {
+<<<<<<< HEAD
+=======
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main section {
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
     width: initial;
   }
   main section:first-child {
-    flex-grow: 2;
+    flex-grow: 1;
   }
   main section:last-child {
     flex-grow: 1;
     flex-basis: 300px;
   }
 }
-main div:first-child {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
 
-h1 {
+.product-header {
   text-align: center;
   font-family: league-gothic, sans-serif;
   font-weight: 400;
@@ -278,8 +280,13 @@ h1 {
   width: 95%;
 }
 @media screen and (min-width: 768px) {
+<<<<<<< HEAD
   h1 {
     margin-left: 8%;
+=======
+  .product-header {
+    margin-left: 15%;
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
   }
 }
 
@@ -308,6 +315,7 @@ h1 {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .row {
   gap: 20px;
   width: 80%;
@@ -322,9 +330,10 @@ footer {
   }
 }
 
+=======
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
 footer {
   background-color: white;
-  color: black;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -332,6 +341,12 @@ footer {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  border-top: 1px solid black;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    width: 80%;
+  }
 }
 footer .img-container {
   width: 20%;
@@ -339,6 +354,7 @@ footer .img-container {
 }
 footer .img-container img {
   width: 100%;
+<<<<<<< HEAD
 }
 
 p {
@@ -347,4 +363,6 @@ p {
 
 .product img {
   width: 100%;
+=======
+>>>>>>> 04f62f90f827335795f0afdcc43bc6669a64c982
 }
