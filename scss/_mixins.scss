@@ -11,35 +11,19 @@
 }
 
 @mixin box {
-  height: 40vh;
-  width: clamp(300px, 40vw, 500px);
-  border: 2px solid black;
-  border-radius: 10px;
-  transition: transform ease-in-out 0.2s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-@mixin mobile-box {
-  height: 40vh;
-  width: 44%;
-  max-width: 200px;
-  border: variables.$border-main;
-  flex-wrap: wrap;
-}
-
-@mixin box {
-  height: 40vh;
-  width: 40vw;
-  max-width: 200px;
+  height: 400px;
+  width: 100%;
   @extend %transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 2px #999;
-  transition: transform 0.2s ease-in-out;
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
+  }
+  @include tablet-only() {
+    width: 300px;
   }
 }
 
