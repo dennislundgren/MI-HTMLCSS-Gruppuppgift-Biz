@@ -68,7 +68,7 @@ header {
     display: none;
     @include mixins.desktop-only {
       display: inline;
-      height: 80px;
+      width: 80px;
       margin-top: -10px;
       img{
         width: 100%;
@@ -77,6 +77,8 @@ header {
         }
     }
   }
+}
+
   nav {
     width: 100%;
     display: flex;
@@ -100,9 +102,9 @@ header {
   ul {
     width: 30%;
     list-style: none;
-    li {
-      display: inline-block;
-    }
+    // li {
+    //   display: inline-block;
+    // }
   }
   .ul2 {
     display: none;
@@ -142,6 +144,8 @@ header {
       }
     }
   }
+}
+
   div:first-child {
     position: absolute;
     left: 30px;
@@ -164,7 +168,7 @@ header {
       animation: biz 0.8s ease 1;
     }
   }
-}
+
 
 main {
   padding: 50px;
@@ -173,7 +177,13 @@ main {
     .navbar{
         position: sticky;
         top: 50px;
+        .row{
+          width: 80%;
+          gap: 20px;
+        }
     }
+  
+
 
   @include mixins.desktop-only {
     flex-direction: row;
@@ -251,6 +261,7 @@ main {
   }
 }
 
+
 .product-header {
   text-align: center;
   @include mixins.gothic;
@@ -278,10 +289,10 @@ main {
 }
 }
 
-.row {
-  gap: 20px;
-  width: 80%;
-}
+// .row {
+//   gap: 20px;
+//   width: 80%;
+// }
 
 footer {
   background-color: white;
@@ -303,5 +314,4 @@ footer {
       width: 100%;
     }
   }
-}
 }
