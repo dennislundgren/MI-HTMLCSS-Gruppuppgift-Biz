@@ -2,8 +2,8 @@
 header,
 nav,
 main,
-.row,
-footer, header .ul2 .fas.fa-caret-down, header div:first-child i, main .product {
+.product-row,
+footer, header .ul2 .fas.fa-caret-down, header div:first-child i, header .burger-wrapper .burger, header .burger-wrapper .burger::before, header .burger-wrapper .burger::after, main .product {
   transition: all 0.2s ease-in-out;
 }
 
@@ -51,7 +51,7 @@ h6 {
 header,
 nav,
 main,
-.row,
+.product-row,
 footer {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ footer {
   header,
 nav,
 main,
-.row,
+.product-row,
 footer {
     flex-direction: row;
   }
@@ -115,6 +115,7 @@ header .icon-container:hover {
 header ul {
   width: 30%;
   list-style: none;
+  z-index: 1;
 }
 header .ul2 {
   display: none;
@@ -187,6 +188,88 @@ header .logo img {
 header .logo:hover {
   animation: biz 0.8s ease 1;
 }
+header input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+}
+header input[type=checkbox]:checked ~ nav ul {
+  position: absolute;
+  top: 80px;
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+header input[type=checkbox]:checked ~ nav ul ul {
+  position: relative;
+  display: none;
+  top: 0;
+  margin-bottom: 20px;
+}
+header input[type=checkbox]:checked ~ nav ul li:first-child:hover ul,
+header input[type=checkbox]:checked ~ nav ul li:first-child:focus ul {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  header input[type=checkbox] {
+    display: none;
+  }
+}
+header .burger-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  header .burger-wrapper {
+    display: none;
+  }
+}
+header .burger-wrapper .burger {
+  position: relative;
+  left: 0;
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header .burger-wrapper .burger::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-10px);
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header .burger-wrapper .burger::after {
+  content: "";
+  position: absolute;
+  transform: translateY(10px);
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger {
+  width: 0;
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger::before {
+  transform: rotate(45deg) translate(-17px, 17px);
+}
+header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
+  transform: rotate(-45deg) translate(-17px, -17px);
+}
 
 main {
   padding: 5px;
@@ -214,7 +297,7 @@ main .navbar {
   main .navbar {
     display: inline;
     width: 15%;
-    height: 300px;
+    height: 100%;
     border: 1px solid black;
     border-radius: 10px;
   }
@@ -303,7 +386,7 @@ main .product .product-info {
   border-radius: 5px;
   text-align: center;
 }
-main .row {
+main .product-row {
   gap: 20px;
   width: 80%;
 }

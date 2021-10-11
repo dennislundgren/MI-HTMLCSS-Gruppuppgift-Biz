@@ -51,7 +51,7 @@ h6 {
 header,
 nav,
 main,
-.row,
+.product-row,
 footer {
   @include mixins.flex;
 }
@@ -118,6 +118,7 @@ header {
   ul {
     width: 30%;
     list-style: none;
+    z-index: 1;
   }
 
   // Detta är lista i header vid hover på sortiment.
@@ -179,7 +180,7 @@ header {
     }
   }
 
-  // Default för första div-elementet i headern, tillbakaknapp samt hamburgare.
+  // Default för första div-elementet i headern, tillbakaknapp.
   div:first-child {
     position: absolute;
     left: 30px;
@@ -208,6 +209,89 @@ header {
       animation: biz 0.8s ease 1;
     }
   }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    &:checked ~ nav ul {
+      position: absolute;
+      top: 80px;
+      display: block;
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      ul {
+        position: relative;
+        display: none;
+        top: 0;
+        margin-bottom: 20px;
+      }
+      li:first-child:hover ul,
+      li:first-child:focus ul {
+        display: block;
+      }
+    }
+    @include mixins.tablet-only {
+      display: none;
+    }
+  }
+
+  .burger-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mixins.tablet-only {
+      display: none;
+    }
+    .burger {
+      position: relative;
+      left: 0;
+      background-color: black;
+      width: 40px;
+      height: 4px;
+      border-radius: 5px;
+      @extend %transition;
+      &::before {
+        content: "";
+        position: absolute;
+        transform: translateY(-10px);
+        background-color: black;
+        width: 40px;
+        height: 4px;
+        border-radius: 5px;
+        @extend %transition;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        transform: translateY(10px);
+        background-color: black;
+        width: 40px;
+        height: 4px;
+        border-radius: 5px;
+        @extend %transition;
+      }
+    }
+  }
+  input[type="checkbox"]:checked ~ .burger-wrapper .burger {
+    width: 0;
+  }
+  input[type="checkbox"]:checked ~ .burger-wrapper .burger::before {
+    transform: rotate(45deg) translate(-17px, 17px);
+  }
+  input[type="checkbox"]:checked ~ .burger-wrapper .burger::after {
+    transform: rotate(-45deg) translate(-17px, -17px);
+  }
 }
 
 // Allt sass relevant för mainblocket.
@@ -234,7 +318,7 @@ main {
     @include mixins.tablet-only {
       display: inline;
       width: 15%;
-      height: 300px;
+      height: 100%;
       border: variables.$border-main;
       border-radius: variables.$border-radius;
       h2 {
@@ -325,7 +409,7 @@ main {
   }
 
   // Row-klass i produktsidan.
-  .row {
+  .product-row {
     gap: 20px;
     width: 80%;
   }
