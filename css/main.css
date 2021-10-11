@@ -202,7 +202,7 @@ main .product-header {
 }
 @media screen and (min-width: 768px) {
   main .product-header {
-    margin-left: 17%;
+    margin-left: 20.5%;
   }
 }
 main .navbar {
@@ -210,7 +210,7 @@ main .navbar {
   position: sticky;
   top: 50px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   main .navbar {
     display: inline;
     width: 15%;
@@ -306,8 +306,8 @@ main .product .product-info {
   text-align: center;
 }
 main .row {
-  row-gap: 80px;
-  width: 80%;
+  row-gap: 60px;
+  width: 75%;
 }
 @media screen and (min-width: 1200px) {
   main {

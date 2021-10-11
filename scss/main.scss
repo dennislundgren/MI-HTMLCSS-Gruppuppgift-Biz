@@ -222,7 +222,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.tablet-only {
-      margin-left: 17%;
+      margin-left: 20.5%;
     }
   }
 
@@ -231,7 +231,7 @@ main {
     display: none;
     position: sticky;
     top: 50px;
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       display: inline;
       width: 15%;
       height: 300px;
@@ -328,8 +328,8 @@ main {
 
   // Row-klass i produktsidan.
   .row {
-    row-gap: 80px;
-    width: 80%;
+    row-gap: 60px;
+    width: 75%;
   }
 
   // Stil då vi går över till tablet-storlek.
