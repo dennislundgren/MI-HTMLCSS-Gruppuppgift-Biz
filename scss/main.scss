@@ -136,7 +136,7 @@ header {
     }
 
     // Stil för lista i desktop-läge.
-    @include mixins.tablet-only {
+    @include mixins.desktop-only {
       width: 320px;
       display: flex;
       gap: 40px;

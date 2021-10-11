@@ -127,7 +127,7 @@ header .ul2 .fas.fa-caret-down {
 header .ul2 li:first-child:hover .fas.fa-caret-down {
   transform: rotate(180deg);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   header .ul2 {
     width: 320px;
     display: flex;
