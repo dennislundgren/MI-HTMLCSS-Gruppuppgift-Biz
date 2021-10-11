@@ -308,6 +308,7 @@ main {
   .product {
     @include mixins.box;
     border-radius: 5px;
+    overflow: hidden;
     img {
       width: 100%;
       border-radius: 5px;
