@@ -217,7 +217,7 @@ main .navbar {
     height: 300px;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.72);
+    box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
   }
   main .navbar h2 {
     margin: 20px;
