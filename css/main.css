@@ -262,9 +262,10 @@ main .product {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   box-shadow: 0 0 2px #999;
   border-radius: 5px;
+  overflow: hidden;
 }
 main .product:hover {
   transform: scale(1.05);
