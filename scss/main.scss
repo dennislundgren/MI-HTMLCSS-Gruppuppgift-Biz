@@ -371,7 +371,7 @@ main {
       width: 17%;
       height: 310px;
       border: variables.$border-main;
-      border-radius: variables.$border-radius;
+      // border-radius: variables.$border-radius;
       box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
       h1 {
         margin: 15px;
@@ -381,6 +381,8 @@ main {
         transition: transform ease-in-out 0.2s;
         list-style: none;
         margin-left: 30px;
+        // font-weight: bold;
+        // font-size: 13pt;
 
         &:hover {
           transform: scale(1.1);

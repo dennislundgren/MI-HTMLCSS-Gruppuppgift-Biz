@@ -356,7 +356,6 @@ main .navbar {
     width: 17%;
     height: 310px;
     border: 1px solid black;
-    border-radius: 10px;
     box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
   }
   main .navbar h1 {
