@@ -47,7 +47,7 @@ h5,
 h6,
 .alternative-button {
   @include mixins.gothic;
-  // font-size: revert;
+  font-size: revert;
 }
 
 // Display flex.
@@ -342,8 +342,9 @@ main {
   .product-header {
     margin-top: 20px;
     text-align: center;
+    justify-content: center;
     @include mixins.gothic;
-    width: 95%;
+    width: 80%;
     @include mixins.desktop-only {
       margin-left: 18%;
       margin-top: 0;
@@ -467,6 +468,9 @@ main {
     @include mixins.box;
     border-radius: 5px;
     overflow: hidden;
+    h2{
+      font-size: 19pt;
+    }
     img {
       width: 100%;
       border-radius: 5px;

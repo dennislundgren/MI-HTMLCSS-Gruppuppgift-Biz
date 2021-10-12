@@ -48,6 +48,7 @@ h6,
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: revert;
 }
 
 header,
@@ -324,10 +325,11 @@ main {
 main .product-header {
   margin-top: 20px;
   text-align: center;
+  justify-content: center;
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
-  width: 95%;
+  width: 80%;
 }
 @media screen and (min-width: 1200px) {
   main .product-header {
@@ -447,6 +449,9 @@ main .product:hover {
   main .product {
     width: 300px;
   }
+}
+main .product h2 {
+  font-size: 19pt;
 }
 main .product img {
   width: 100%;
