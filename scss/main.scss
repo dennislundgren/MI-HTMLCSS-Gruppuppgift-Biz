@@ -502,40 +502,74 @@ li {
 
 // Jättefin fot.
 
-footer {
-  border-top: variables.$border-main;
+
+.footer-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; 
-  .footer-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    div {
-      width: 100%;
-      .text-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        width: 100%;
-        p {
-          padding: px;
-        }
-        .fa {
-          padding: 9px;
-          width: 15px;
-        }
-        a {
+  flex-direction: column;
+  width: 100%;
+
+  footer {
+      border-top: variables.$border-main;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+
+      #info-wrapper {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          text-decoration: none;
-          color: black;
-        }
+          flex-direction: column;
+          @include mixins.desktop-only {
+              flex-direction: row;
+              align-items: baseline;
+              width: 60%;
+          }
+
+          div {
+              width: 100%;
+              @include mixins.desktop-only {
+                  display: flex;
+                  justify-content: center;
+              }
+
+              #info {
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+                  @include mixins.desktop-only {
+                      width: 50%;
+                      display: flex;
+                      justify-content: center;
+                  }
+
+                  p {
+                      font-size: 1.3rem;
+                      padding: 5pt;
+                      color: black;
+                  }
+
+                  .fa {
+                      padding: 7pt;
+                      width: 35px;
+                  }
+
+                  a {
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                      text-decoration: none;
+                  }
+              }
+          }
       }
-    }
+      #about-info,
+      #company-info,
+      #social-info {
+          padding-top: 35pt;
+          padding-bottom: 5pt;
+      }
   }
 }
 
-
+.footer-img {
+  transform: scale(0.6);
+}

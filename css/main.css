@@ -475,38 +475,72 @@ li:hover {
   cursor: pointer;
 }
 
-footer {
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.footer-wrapper footer {
   border-top: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-footer .footer-wrapper {
-  display: flex;
-  flex-direction: row;
   width: 80%;
 }
-footer .footer-wrapper div {
-  width: 100%;
-}
-footer .footer-wrapper div .text-wrapper {
+.footer-wrapper footer #info-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+}
+@media screen and (min-width: 1200px) {
+  .footer-wrapper footer #info-wrapper {
+    flex-direction: row;
+    align-items: baseline;
+    width: 60%;
+  }
+}
+.footer-wrapper footer #info-wrapper div {
   width: 100%;
 }
-footer .footer-wrapper div .text-wrapper p {
-  padding: px;
+@media screen and (min-width: 1200px) {
+  .footer-wrapper footer #info-wrapper div {
+    display: flex;
+    justify-content: center;
+  }
 }
-footer .footer-wrapper div .text-wrapper .fa {
-  padding: 9px;
-  width: 15px;
+.footer-wrapper footer #info-wrapper div #info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-footer .footer-wrapper div .text-wrapper a {
+@media screen and (min-width: 1200px) {
+  .footer-wrapper footer #info-wrapper div #info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer-wrapper footer #info-wrapper div #info p {
+  font-size: 1.3rem;
+  padding: 5pt;
+  color: black;
+}
+.footer-wrapper footer #info-wrapper div #info .fa {
+  padding: 7pt;
+  width: 35px;
+}
+.footer-wrapper footer #info-wrapper div #info a {
   display: flex;
   flex-direction: row;
   align-items: center;
   text-decoration: none;
-  color: black;
+}
+.footer-wrapper footer #about-info,
+.footer-wrapper footer #company-info,
+.footer-wrapper footer #social-info {
+  padding-top: 35pt;
+  padding-bottom: 5pt;
+}
+
+.footer-img {
+  transform: scale(0.6);
 }
