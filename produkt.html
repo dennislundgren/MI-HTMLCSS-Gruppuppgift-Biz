@@ -65,7 +65,62 @@
       </nav>
     </header>
     <main>
-      <h1 class="product-header"><div>Populärt just nu</div></h1>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">
+                von Silfversked & Partner
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="product">
+                <img src="assets/services/finance.png" alt="en bild" />
+                <div class="product-info">
+                  <div>
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    <i class="bi bi-lightning-charge"></i>
+                    <i class="bi bi-lightning-charge"></i>
+                    <i class="bi bi-lightning-charge"></i>
+                    <i class="bi bi-lightning-charge"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Stäng
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="window.location.href='checkout.html'"
+              >
+                Till checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slut modal -->
+      <h1 class="product-header">Populärt just nu</h1>
       <nav class="navbar">
         <ul>
           <h1>Kategorier</h1>
