@@ -44,9 +44,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alternative-button {
   @include mixins.gothic;
-  font-size: revert;
+  // font-size: revert;
 }
 
 // Display flex.
@@ -330,6 +331,7 @@ header {
       .alternative-button {
         @include mixins.button;
         border-radius: 1px;
+        font-size: 30px;
         background-color: white;
       }
     }
@@ -340,10 +342,6 @@ header {
 main {
   padding: 5px;
   gap: 20px;
-
-  .column-reverse {
-    flex-direction: column-reverse;
-  }
 
   // Design för produktheadern i main.
   .product-header {
@@ -375,64 +373,94 @@ main {
       }
     }
   }
-}
-// Default-stil för sektioner i main.
-section {
-  border-radius: 5px;
-  padding: 30px;
-  width: 100%;
-  box-shadow: 0 0 2px #999;
 
-  // Ytterligare stil för formulär.
-  form {
+  // Default-stil för sektioner i main.
+  section {
+    border-radius: 5px;
+    padding: 30px;
     width: 100%;
+    box-shadow: 0 0 2px #999;
 
-    input {
-      margin-bottom: 20px;
+    // Ytterligare stil för formulär.
+    form {
+      width: 100%;
+
+      input {
+        margin-bottom: 20px;
+      }
+
+      div.row {
+        width: initial;
+        margin: initial;
+        padding: initial;
+        div {
+          min-width: 100px;
+        }
+      }
+      label[for="tel"] {
+        display: block;
+      }
+      .select-menu {
+        .form-select {
+          display: inline-block;
+          width: 80px;
+          height: 38px;
+        }
+        input[type="tel"].form-control {
+          display: inline-block;
+          width: calc(100% - 80px);
+        }
+      }
     }
 
-    div.row {
+    // Bild i checkout för tjänst som beställs.
+    div.product-checkout {
+      text-align: center;
+      width: 100%;
+      i {
+        padding-top: 10px;
+      }
+      div:nth-child(2) {
+        margin-top: 20px;
+      }
+
+      // Visar ifall tjänsten är tillgänglig eller ej.
+      .available {
+        color: green;
+      }
+      .not-available {
+        color: red;
+      }
+    }
+
+    li {
+      transition: transform ease-in-out 0.2s;
+      list-style: none;
+
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Stil då vi går över till tablet-storlek.
+  @include mixins.desktop-only {
+    flex-direction: row;
+    padding: 30px;
+
+    section {
       width: initial;
-      margin: initial;
-      padding: initial;
-      div {
-        min-width: 100px;
-      }
     }
-    label[for="tel"] {
-      display: block;
-    }
-    .select-menu {
-      .form-select {
-        display: inline-block;
-        width: 80px;
-        height: 38px;
-      }
-      input[type="tel"].form-control {
-        display: inline-block;
-        width: calc(100% - 80px);
-      }
-    }
-  }
 
-  // Bild i checkout för tjänst som beställs.
-  div.product-checkout {
-    text-align: center;
-    width: 100%;
-    i {
-      padding-top: 10px;
+    section:first-child {
+      flex-grow: 1;
     }
-    div:nth-child(2) {
-      margin-top: 20px;
-    }
-  }
 
-  // Visar ifall tjänsten är tillgänglig eller ej.
-  .available {
-    color: green;
-  }
-  .not-available {
-    color: red;
+    section:last-child {
+      flex-grow: 1;
+      flex-basis: 300px;
+    }
   }
 
   // Produkter i produktsidan.
@@ -459,40 +487,10 @@ section {
       flex-direction: column;
     }
   }
-
   // Row-klass i produktsidan.
   .product-row {
     gap: 20px;
     width: 80%;
-  }
-
-  // Stil då vi går över till tablet-storlek.
-  @include mixins.desktop-only {
-    flex-direction: row;
-    padding: 30px;
-
-    section {
-      width: initial;
-    }
-
-    section:first-child {
-      flex-grow: 1;
-    }
-
-    section:last-child {
-      flex-grow: 1;
-      flex-basis: 300px;
-    }
-  }
-}
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
-
-  &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
   }
 }
 
