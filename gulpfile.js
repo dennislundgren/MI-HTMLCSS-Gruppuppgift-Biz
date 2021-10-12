@@ -22,7 +22,7 @@ gulp.task("default", gulp.series("compile", "watch-scss"), function () {});
 // "npm clean" i terminalen.
 gulp.task("clean", function () {
   return gulp
-    .src("css/*.css")
+    .src("css/main.css")
     .pipe(auto())
     .pipe(csso())
     .pipe(
