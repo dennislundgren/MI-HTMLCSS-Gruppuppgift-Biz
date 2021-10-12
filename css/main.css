@@ -27,7 +27,8 @@ footer, header .ul2 .fas.fa-caret-down, header div:first-child i, header .burger
     transform: scale(1);
   }
 }
-html {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -66,6 +67,10 @@ main,
 footer {
     flex-direction: row;
   }
+}
+
+ul {
+  line-height: 1.2;
 }
 
 header {
@@ -331,7 +336,7 @@ main .product-header {
 }
 @media screen and (min-width: 1200px) {
   main .product-header {
-    margin-left: 20.5%;
+    margin-left: 18.5%;
     margin-top: 0;
   }
 }

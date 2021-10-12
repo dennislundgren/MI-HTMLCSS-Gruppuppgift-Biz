@@ -27,7 +27,8 @@
 }
 
 // Default text och storlek för text samt ikoner.
-html {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -57,6 +58,10 @@ main,
 .product-row,
 footer {
   @include mixins.flex;
+}
+
+ul{
+  line-height: 1.2;
 }
 
 // All sass relevant för header.
@@ -350,7 +355,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.desktop-only {
-      margin-left: 20.5%;
+      margin-left: 18.5%;
       margin-top: 0;
     }
   }
