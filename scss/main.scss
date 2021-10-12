@@ -31,6 +31,11 @@ body {
   font-size: 16px;
 }
 
+// Modal extra design
+.modal-content [class^="modal"] {
+  border: none;
+}
+
 // Border-box ändrar så att padding ingår i full bredd.
 // Margin 0 auto för att centrera allt innehåll.
 * {
@@ -47,7 +52,7 @@ h5,
 h6,
 .alternative-button {
   @include mixins.gothic;
-  // font-size: revert;
+  font-size: revert;
 }
 
 // Display flex.
@@ -217,11 +222,11 @@ header {
     opacity: 0;
     top: 0;
     left: 0;
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
     &:checked ~ nav ul {
       position: absolute;
-      top: 80px;
+      top: 120px;
       display: block;
       background-color: white;
       width: 100%;
@@ -246,8 +251,8 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
     z-index: -1;
     display: flex;
     justify-content: center;
@@ -315,11 +320,14 @@ header {
     align-items: center;
 
     h1 {
-      padding-bottom: 30px;
+      text-align: center;
       justify-content: center;
       width: 50%; 
-      font-size: 2.7rem;
-      @include mixins.tablet-only {
+      padding-bottom: 10px;
+      font-size: 2.2rem;
+      @include mixins.desktop-only {
+        padding-bottom: 45px;
+        font-size: 2.9rem;
         width: 50%;
         display: flex;
         justify-content: center;
@@ -329,7 +337,7 @@ header {
     p {
       text-align: center;
       font-size: 1.5rem;
-      padding: 15px;
+      padding: 10px;
     }
     
     .alternative {
@@ -363,8 +371,9 @@ main {
   .product-header {
     margin-top: 20px;
     text-align: center;
+    justify-content: center;
     @include mixins.gothic;
-    width: 95%;
+    width: 80%;
     @include mixins.desktop-only {
       margin-left: 18%;
       margin-top: 0;
@@ -383,7 +392,7 @@ main {
       width: 17%;
       height: 310px;
       border: variables.$border-main;
-      border-radius: variables.$border-radius;
+      // border-radius: variables.$border-radius;
       box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
       h1 {
         margin: 15px;
@@ -393,15 +402,16 @@ main {
         transition: transform ease-in-out 0.2s;
         list-style: none;
         margin-left: 30px;
-  
+        // font-weight: bold;
+        // font-size: 13pt;
+
         &:hover {
           transform: scale(1.1);
           cursor: pointer;
         }
       }
     }
-    }
-  
+  }
 
   // Default-stil för sektioner i main.
   section {
@@ -488,6 +498,9 @@ main {
     @include mixins.box;
     border-radius: 5px;
     overflow: hidden;
+    h2{
+      font-size: 19pt;
+    }
     img {
       width: 100%;
       border-radius: 5px;
@@ -510,7 +523,6 @@ main {
   .product-row {
     width: 80%;
     row-gap: 60px;
-
   }
 }
 
@@ -578,7 +590,6 @@ main {
       #contact-info,
       #social-info {
           padding-top: 50pt;
-          padding-bottom: 5pt;
           
       }
   }
@@ -594,5 +605,11 @@ main {
     width: 50%;
     display: flex;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .column-reverse {
+    flex-direction: column-reverse;
   }
 }

@@ -33,6 +33,10 @@ body {
   font-size: 16px;
 }
 
+.modal-content [class^=modal] {
+  border: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -48,6 +52,7 @@ h6,
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: revert;
 }
 
 header,
@@ -196,12 +201,12 @@ header input[type=checkbox] {
   opacity: 0;
   top: 0;
   left: 0;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
 }
 header input[type=checkbox]:checked ~ nav ul {
   position: absolute;
-  top: 80px;
+  top: 120px;
   display: block;
   background-color: white;
   width: 100%;
@@ -226,8 +231,8 @@ header .burger-wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -291,13 +296,16 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   align-items: center;
 }
 .home-wrapper .home-page h1 {
-  padding-bottom: 30px;
+  text-align: center;
   justify-content: center;
   width: 50%;
-  font-size: 2.7rem;
+  padding-bottom: 10px;
+  font-size: 2.2rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .home-wrapper .home-page h1 {
+    padding-bottom: 45px;
+    font-size: 2.9rem;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -306,7 +314,7 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
 .home-wrapper .home-page p {
   text-align: center;
   font-size: 1.5rem;
-  padding: 15px;
+  padding: 10px;
 }
 .home-wrapper .home-page .alternative {
   width: 100%;
@@ -341,10 +349,11 @@ main {
 main .product-header {
   margin-top: 20px;
   text-align: center;
+  justify-content: center;
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
-  width: 95%;
+  width: 80%;
 }
 @media screen and (min-width: 1200px) {
   main .product-header {
@@ -364,7 +373,6 @@ main .navbar {
     width: 17%;
     height: 310px;
     border: 1px solid black;
-    border-radius: 10px;
     box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
   }
   main .navbar h1 {
@@ -465,6 +473,9 @@ main .product:hover {
     width: 300px;
   }
 }
+main .product h2 {
+  font-size: 19pt;
+}
 main .product img {
   width: 100%;
   border-radius: 5px;
@@ -550,7 +561,6 @@ main .product-row {
 .footer-wrapper footer #contact-info,
 .footer-wrapper footer #social-info {
   padding-top: 50pt;
-  padding-bottom: 5pt;
 }
 
 .footer-img {
@@ -565,5 +575,11 @@ main .product-row {
     width: 50%;
     display: flex;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .column-reverse {
+    flex-direction: column-reverse;
   }
 }
