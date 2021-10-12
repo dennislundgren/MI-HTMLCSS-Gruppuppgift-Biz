@@ -4,39 +4,76 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Biz Startsida</title>
+        <title>Biz</title>
+        <script
+          src="https://kit.fontawesome.com/67698aaecf.js"
+          crossorigin="anonymous"
+        ></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+          integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU"
+          crossorigin="anonymous"
+        />
         <link rel="stylesheet" href="css/main.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/67698aaecf.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
+      </head>
+      <body>
         <header>
-            <div class="header-img"><img src="assets/logo_big.png" alt="main logo"></div>
-            <nav>
-              <ul class="ul2">
-                <li class="dropdown">Tjänster
-                <ul class="dropdown-content"><li>Snickare</li><li>Målare</li><li>VVS</li><li>Frisör</li><li>Make-up artist</li><li>Jurist</li><li>Fysioterapeut</li><li>Musiker</li><li>Kock</li></ul>
-                </li>
-                <li>Om oss</li>
-                <li>Kontakt</li>
-              </ul>
-                <!-- <div class="search-container">
-                  <input type="text" placeholder="Sök" name="search">
-                </div> -->
-                  <div class="icon-container"><i class="fas fa-search"></i></div>
-                  <div class="icon-container"><i class="fas fa-shopping-cart"></i></div>             
-            </nav>
+          <div class="header-img">
+            <img src="assets/logo_big.png" alt="main logo" />
+          </div>
+          <input type="checkbox" name="menu-btn" id="menu-btn" />
+          <div class="burger-wrapper">
+            <div class="burger"></div>
+          </div>
+          <nav>
+            <ul class="ul2">
+              <li class="dropdown">
+                Tjänster<i class="fas fa-caret-down"></i>
+                <ul class="dropdown-content">
+                  <li>Snickare</li>
+                  <li>Målare</li>
+                  <li>VVS</li>
+                  <li>Frisör</li>
+                  <li>Make-up artist</li>
+                  <li>Jurist</li>
+                  <li>Fysioterapeut</li>
+                  <li>Musiker</li>
+                  <li>Kock</li>
+                  <li>Barnvakt</li>
+                </ul>
+              </li>
+              <li>Om oss</li>
+              <li>Kontakt</li>
+            </ul>
+            <div class="icon-container"><i class="fas fa-search"></i></div>
+            <div class="icon-container"><i class="fas fa-shopping-cart"></i></div>
+          </nav>
         </header>
         <div class="home-wrapper">
             <div class="home-page">
                 <div class="home-page-text">
-                    <h1>Hur vill du handla?</h1>
-                    <p class="home-p">Är du här för att få hjälp med ditt företag?</p><br>
-                    <p class="home-p">Eller behöver du understöd i ett privat projekt?</p>
+                    <div>
+                        <h1>Hur vill du handla?</h1>
+                    </div>
+                    <p>Är du här för att få hjälp med ditt företag?</p>
+                    <br>
+                    <p>Eller behöver du understöd i ett privat projekt?</p>
                 </div>
                 <div class="alternative">         
-                    <button class="alternative-button"><h2>Privat</h2></button>
-                    <button class="alternative-button"><h2>Företag</h2></button>
+                    <button class="alternative-button">
+                        <p>Privat</p>
+                    </button>
+                    <button class="alternative-button">
+                        <p>Företag</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -44,20 +81,20 @@
         <footer id="about">
             <div id="info-wrapper">
                 <div id="about-info">
-                    <div id="info">
+                    <div class="info">
                        <p>Policy</p>
                        <p>Hållbarhet</p>
                        <p>Om Oss</p>
                     </div>
                 </div>
-                <div id="other-info">
-                    <div id="info">
+                <div id="contact-info">
+                    <div class="info">
                        <p>info@biz.com</p>
                        <p>033-14 00 00</p>
                     </div>
                 </div>
                 <div id="social-info">
-                    <div id="info">
+                    <div class="info">
                         <a href="#">
                            <p class="fa fa-instagram"></p>
                            <p>Instagram</p>
@@ -68,14 +105,22 @@
                         </a>
                         <a href="#">
                             <p class="fa fa-facebook"></p>
-                           <p>Facebook</p>
-                       </a>
+                            <p>Facebook</p>
+                        </a>
                     </div>
                 </div>
            </div>
-        <div class="footer-img"><img src="assets/logo_big.png" alt="footer logo"></div>
+           <div class="footer-img">
+            <img src="assets/logo_big.png" alt="footer logo">
+        </div>
     </footer>
 </div>
-</body>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
 

@@ -3,7 +3,7 @@ header,
 nav,
 main,
 .product-row,
-footer, header .ul2 .fas.fa-caret-down, header div:first-child i, header .burger-wrapper .burger, header .burger-wrapper .burger::before, header .burger-wrapper .burger::after, section .product {
+footer, header .ul2 .fas.fa-caret-down, header div:first-child i, header .burger-wrapper .burger, header .burger-wrapper .burger::before, header .burger-wrapper .burger::after, main .product {
   transition: all 0.2s ease-in-out;
 }
 
@@ -43,11 +43,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alternative-button {
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: revert;
 }
 
 header,
@@ -75,14 +75,11 @@ ul {
 
 header {
   background-color: rgba(153, 153, 153, 0.164);
-  height: 80px;
+  height: 120px;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid black;
   flex-direction: row;
-}
-header .search-container {
-  margin-bottom: 15px;
 }
 header .header-img {
   display: none;
@@ -91,7 +88,7 @@ header .header-img {
 @media screen and (min-width: 1200px) {
   header .header-img {
     display: inline;
-    height: 80px;
+    height: 100px;
   }
   header .header-img img {
     height: 100%;
@@ -293,10 +290,23 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   justify-content: center;
   align-items: center;
 }
+.home-wrapper .home-page h1 {
+  padding-bottom: 30px;
+  justify-content: center;
+  width: 50%;
+  font-size: 2.7rem;
+}
+@media screen and (min-width: 768px) {
+  .home-wrapper .home-page h1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
 .home-wrapper .home-page p {
   text-align: center;
-  font-size: 1.3rem;
-  padding: 10px;
+  font-size: 1.5rem;
+  padding: 15px;
 }
 .home-wrapper .home-page .alternative {
   width: 100%;
@@ -304,6 +314,10 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.home-wrapper .home-page .alternative p {
+  font-size: 2.3rem;
+  padding-top: 22px;
 }
 .home-wrapper .home-page .alternative .alternative-button {
   height: 15vh;
@@ -313,6 +327,7 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   border-radius: 10px;
   transition: transform ease-in-out 0.2s;
   border-radius: 1px;
+  font-size: 30px;
   background-color: white;
 }
 .home-wrapper .home-page .alternative .alternative-button:hover {
@@ -322,9 +337,6 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
 main {
   padding: 5px;
   gap: 20px;
-}
-main .column-reverse {
-  flex-direction: column-reverse;
 }
 main .product-header {
   margin-top: 20px;
@@ -336,7 +348,7 @@ main .product-header {
 }
 @media screen and (min-width: 1200px) {
   main .product-header {
-    margin-left: 18.5%;
+    margin-left: 18%;
     margin-top: 0;
   }
 }
@@ -344,71 +356,96 @@ main .navbar {
   display: none;
   position: sticky;
   top: 50px;
+  margin-left: -40px;
 }
 @media screen and (min-width: 1200px) {
   main .navbar {
     display: inline;
-    width: 15%;
-    height: 100%;
+    width: 17%;
+    height: 310px;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
   }
-  main .navbar h2 {
-    margin: 14px;
-    margin-left: -12px;
+  main .navbar h1 {
+    margin: 15px;
+    font-size: 25pt;
+  }
+  main .navbar li {
+    transition: transform ease-in-out 0.2s;
+    list-style: none;
+    margin-left: 30px;
+  }
+  main .navbar li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 }
-
-section {
+main section {
   border-radius: 5px;
   padding: 30px;
   width: 100%;
   box-shadow: 0 0 2px #999;
 }
-section form {
+main section form {
   width: 100%;
 }
-section form input {
+main section form input {
   margin-bottom: 20px;
 }
-section form div.row {
+main section form div.row {
   width: initial;
   margin: initial;
   padding: initial;
 }
-section form div.row div {
+main section form div.row div {
   min-width: 100px;
 }
-section form label[for=tel] {
+main section form label[for=tel] {
   display: block;
 }
-section form .select-menu .form-select {
+main section form .select-menu .form-select {
   display: inline-block;
   width: 80px;
   height: 38px;
 }
-section form .select-menu input[type=tel].form-control {
+main section form .select-menu input[type=tel].form-control {
   display: inline-block;
   width: calc(100% - 80px);
 }
-section div.product-checkout {
+main section div.product-checkout {
   text-align: center;
   width: 100%;
 }
-section div.product-checkout i {
+main section div.product-checkout i {
   padding-top: 10px;
 }
-section div.product-checkout div:nth-child(2) {
+main section div.product-checkout div:nth-child(2) {
   margin-top: 20px;
 }
-section .available {
+main section div.product-checkout .available {
   color: green;
 }
-section .not-available {
+main section div.product-checkout .not-available {
   color: red;
 }
-section .product {
+@media screen and (min-width: 1200px) {
+  main {
+    flex-direction: row;
+    padding: 30px;
+  }
+  main section {
+    width: initial;
+  }
+  main section:first-child {
+    flex-grow: 1;
+  }
+  main section:last-child {
+    flex-grow: 1;
+    flex-basis: 300px;
+  }
+}
+main .product {
   position: relative;
   height: 400px;
   width: 100%;
@@ -419,20 +456,20 @@ section .product {
   border-radius: 5px;
   overflow: hidden;
 }
-section .product:hover {
+main .product:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  section .product {
+  main .product {
     width: 300px;
   }
 }
-section .product img {
+main .product img {
   width: 100%;
   border-radius: 5px;
 }
-section .product .product-info {
+main .product .product-info {
   position: absolute;
   bottom: 0px;
   background-color: white;
@@ -445,34 +482,9 @@ section .product .product-info {
   align-items: center;
   flex-direction: column;
 }
-section .product-row {
-  gap: 20px;
+main .product-row {
   width: 80%;
-}
-@media screen and (min-width: 1200px) {
-  section {
-    flex-direction: row;
-    padding: 30px;
-  }
-  section section {
-    width: initial;
-  }
-  section section:first-child {
-    flex-grow: 1;
-  }
-  section section:last-child {
-    flex-grow: 1;
-    flex-basis: 300px;
-  }
-}
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
-}
-li:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+  row-gap: 60px;
 }
 
 .footer-wrapper {
@@ -495,52 +507,63 @@ li:hover {
   .footer-wrapper footer #info-wrapper {
     flex-direction: row;
     align-items: baseline;
-    width: 60%;
+    width: 80%;
   }
 }
 .footer-wrapper footer #info-wrapper div {
   width: 100%;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .footer-wrapper footer #info-wrapper div {
     display: flex;
     justify-content: center;
   }
 }
-.footer-wrapper footer #info-wrapper div #info {
+.footer-wrapper footer #info-wrapper div .info {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 @media screen and (min-width: 1200px) {
-  .footer-wrapper footer #info-wrapper div #info {
-    width: 50%;
+  .footer-wrapper footer #info-wrapper div .info {
+    width: 75%;
     display: flex;
     justify-content: center;
   }
 }
-.footer-wrapper footer #info-wrapper div #info p {
+.footer-wrapper footer #info-wrapper div .info p {
   font-size: 1.3rem;
   padding: 5pt;
   color: black;
 }
-.footer-wrapper footer #info-wrapper div #info .fa {
+.footer-wrapper footer #info-wrapper div .info .fa {
   padding: 7pt;
   width: 35px;
 }
-.footer-wrapper footer #info-wrapper div #info a {
+.footer-wrapper footer #info-wrapper div .info a {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   text-decoration: none;
 }
 .footer-wrapper footer #about-info,
-.footer-wrapper footer #company-info,
+.footer-wrapper footer #contact-info,
 .footer-wrapper footer #social-info {
-  padding-top: 35pt;
+  padding-top: 50pt;
   padding-bottom: 5pt;
 }
 
 .footer-img {
+  width: 100%;
   transform: scale(0.6);
+}
+.footer-img img {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .footer-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
 }

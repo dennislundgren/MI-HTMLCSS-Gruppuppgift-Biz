@@ -2,8 +2,6 @@
 @use "variables";
 @import url("https://use.typekit.net/ayn4xon.css");
 
-
-     
 // Dennis: animation till logga.
 @keyframes biz {
   0% {
@@ -46,9 +44,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alternative-button {
   @include mixins.gothic;
-  font-size: revert;
+  // font-size: revert;
 }
 
 // Display flex.
@@ -60,23 +59,18 @@ footer {
   @include mixins.flex;
 }
 
-ul{
+ul {
   line-height: 1.2;
 }
 
 // All sass relevant för header.
 header {
   background-color: rgba(153, 153, 153, 0.164);
-  height: 80px;
+  height: 120px;
   justify-content: center;
   align-items: center;
   border-bottom: variables.$border-main;
   flex-direction: row;
-
-  // Sökboxen.
-  .search-container {
-    margin-bottom: 15px;
-  }
 
   // Img-header i produkt och index.
   .header-img {
@@ -85,7 +79,7 @@ header {
 
     @include mixins.desktop-only {
       display: inline;
-      height: 80px;
+      height: 100px;
       // margin-top: -10px;
 
       img {
@@ -302,51 +296,68 @@ header {
   }
 }
 
-// index/home-page 
+// index/home-page
 
 .home-wrapper {
-display: flex;
-flex-direction: column;
-width: 100%;
-    .home-page {
-        height: 90vh;
-        width: 100%;
-        background-image: url("/assets/background-index-home-page.jpg");
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-            p {
-                text-align: center; 
-                font-size: 1.3rem;
-                padding: 10px;
-            }
-        .alternative {
-            width: 100%;  
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-                .alternative-button {
-                    @include mixins.button;
-                    border-radius: 1px;
-                    background-color: white;
-            }        
-        }
-    }
-}
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
+  .home-page {
+    height: 90vh;
+    width: 100%;
+    background-image: url("/assets/background-index-home-page.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      padding-bottom: 30px;
+      justify-content: center;
+      width: 50%; 
+      font-size: 2.7rem;
+      @include mixins.tablet-only {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 15px;
+    }
+    
+    .alternative {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      p {
+        font-size: 2.3rem;
+        padding-top: 22px;
+      }
+
+      .alternative-button {
+        @include mixins.button;
+        border-radius: 1px;
+        font-size: 30px;
+        background-color: white;
+      }
+    }
+  }
+}
 
 // Allt sass relevant för mainblocket.
 main {
   padding: 5px;
   gap: 20px;
-
-  .column-reverse {
-    flex-direction: column-reverse;
-  }
 
   // Design för produktheadern i main.
   .product-header {
@@ -355,7 +366,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.desktop-only {
-      margin-left: 18.5%;
+      margin-left: 18%;
       margin-top: 0;
     }
   }
@@ -365,20 +376,33 @@ main {
     display: none;
     position: sticky;
     top: 50px;
+    margin-left: -40px;
+    // padding-left: 30px;
     @include mixins.desktop-only {
       display: inline;
-      width: 15%;
-      height: 100%;
+      width: 17%;
+      height: 310px;
       border: variables.$border-main;
       border-radius: variables.$border-radius;
       box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
-      h2 {
-        margin: 14px;
-        margin-left: -12px;
+      h1 {
+        margin: 15px;
+        font-size: 25pt;
+      }
+      li {
+        transition: transform ease-in-out 0.2s;
+        list-style: none;
+        margin-left: 30px;
+  
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
       }
     }
-  }
-}
+    }
+  
+
   // Default-stil för sektioner i main.
   section {
     border-radius: 5px;
@@ -428,16 +452,35 @@ main {
       div:nth-child(2) {
         margin-top: 20px;
       }
+
+      // Visar ifall tjänsten är tillgänglig eller ej.
+      .available {
+        color: green;
+      }
+      .not-available {
+        color: red;
+      }
+    }
+  }
+
+  // Stil då vi går över till tablet-storlek.
+  @include mixins.desktop-only {
+    flex-direction: row;
+    padding: 30px;
+
+    section {
+      width: initial;
     }
 
-    // Visar ifall tjänsten är tillgänglig eller ej.
-    .available {
-      color: green;
+    section:first-child {
+      flex-grow: 1;
     }
-    .not-available {
-      color: red;
+
+    section:last-child {
+      flex-grow: 1;
+      flex-basis: 300px;
     }
-  
+  }
 
   // Produkter i produktsidan.
   .product {
@@ -463,40 +506,11 @@ main {
       flex-direction: column;
     }
   }
-
   // Row-klass i produktsidan.
   .product-row {
-    gap: 20px;
     width: 80%;
-  }
+    row-gap: 60px;
 
-  // Stil då vi går över till tablet-storlek.
-  @include mixins.desktop-only {
-    flex-direction: row;
-    padding: 30px;
-
-    section {
-      width: initial;
-    }
-
-    section:first-child {
-      flex-grow: 1;
-    }
-
-    section:last-child {
-      flex-grow: 1;
-      flex-basis: 300px;
-    }
-  }
-}
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
-
-  &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
   }
 }
 
@@ -521,22 +535,21 @@ li {
           @include mixins.desktop-only {
               flex-direction: row;
               align-items: baseline;
-              width: 60%;
+              width: 80%;
           }
 
           div {
               width: 100%;
-              @include mixins.desktop-only {
+              @include mixins.tablet-only {
                   display: flex;
                   justify-content: center;
               }
-
-              #info {
+              .info {
                   display: flex;
                   flex-direction: column;
                   width: 100%;
                   @include mixins.desktop-only {
-                      width: 50%;
+                      width: 75%;
                       display: flex;
                       justify-content: center;
                   }
@@ -555,21 +568,31 @@ li {
                   a {
                       display: flex;
                       flex-direction: row;
-                      align-items: center;
+                      align-items: left;
                       text-decoration: none;
                   }
               }
           }
       }
       #about-info,
-      #company-info,
+      #contact-info,
       #social-info {
-          padding-top: 35pt;
+          padding-top: 50pt;
           padding-bottom: 5pt;
+          
       }
   }
 }
 
 .footer-img {
-  transform: scale(0.6);
+  width: 100%;
+  transform:scale(0.6);
+  img {
+    width: 100%;
+  }
+  @include mixins.desktop-only {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
 }
