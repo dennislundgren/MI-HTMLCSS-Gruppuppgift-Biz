@@ -10,6 +10,25 @@
   }
 }
 
+@mixin button {
+  height: 15vh;
+  margin: 30px;
+  width: clamp(350px, 15vw, 300px);
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: transform ease-in-out 0.2s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin mobile-button {
+  height: 40vh;
+  width: 100%;
+  border: variables.$border-main;
+  flex-wrap: wrap;
+}
+
 @mixin box {
   height: 400px;
   width: 100%;

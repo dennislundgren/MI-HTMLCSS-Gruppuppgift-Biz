@@ -43,11 +43,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alternative-button {
   font-family: league-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: revert;
 }
 
 header,
@@ -274,12 +274,52 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   transform: rotate(-45deg) translate(-17px, -17px);
 }
 
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.home-wrapper .home-page {
+  height: 90vh;
+  width: 100%;
+  background-image: url("/assets/background-index-home-page.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-wrapper .home-page p {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+.home-wrapper .home-page .alternative {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.home-wrapper .home-page .alternative .alternative-button {
+  height: 15vh;
+  margin: 30px;
+  width: clamp(350px, 15vw, 300px);
+  border: 2px solid black;
+  border-radius: 10px;
+  transition: transform ease-in-out 0.2s;
+  border-radius: 1px;
+  font-size: 30px;
+  background-color: white;
+}
+.home-wrapper .home-page .alternative .alternative-button:hover {
+  transform: scale(1.05);
+}
+
 main {
   padding: 5px;
   gap: 20px;
-}
-main .column-reverse {
-  flex-direction: column-reverse;
 }
 main .product-header {
   margin-top: 20px;
@@ -315,7 +355,13 @@ main .navbar {
     font-size: 25pt;
   }
   main .navbar li {
+    transition: transform ease-in-out 0.2s;
+    list-style: none;
     margin-left: 30px;
+  }
+  main .navbar li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 }
 main section {
@@ -360,11 +406,27 @@ main section div.product-checkout i {
 main section div.product-checkout div:nth-child(2) {
   margin-top: 20px;
 }
-main section .available {
+main section div.product-checkout .available {
   color: green;
 }
-main section .not-available {
+main section div.product-checkout .not-available {
   color: red;
+}
+@media screen and (min-width: 1200px) {
+  main {
+    flex-direction: row;
+    padding: 30px;
+  }
+  main section {
+    width: initial;
+  }
+  main section:first-child {
+    flex-grow: 1;
+  }
+  main section:last-child {
+    flex-grow: 1;
+    flex-basis: 300px;
+  }
 }
 main .product {
   position: relative;
@@ -407,52 +469,39 @@ main .product-row {
   width: 80%;
   row-gap: 60px;
 }
-@media screen and (min-width: 1200px) {
-  main {
-    flex-direction: row;
-    padding: 30px;
-  }
-  main section {
-    width: initial;
-  }
-  main section:first-child {
-    flex-grow: 1;
-  }
-  main section:last-child {
-    flex-grow: 1;
-    flex-basis: 300px;
-  }
-}
 
 footer {
-  background-color: white;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   border-top: 1px solid black;
-}
-@media screen and (min-width: 768px) {
-  footer {
-    width: 80%;
-  }
-}
-footer .img-container {
-  width: 20%;
-  margin-top: 40px;
-}
-footer .img-container img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
+footer .footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
 }
-li:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+footer .footer-wrapper div {
+  width: 100%;
+}
+footer .footer-wrapper div .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+footer .footer-wrapper div .text-wrapper p {
+  padding: px;
+}
+footer .footer-wrapper div .text-wrapper .fa {
+  padding: 9px;
+  width: 15px;
+}
+footer .footer-wrapper div .text-wrapper a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }

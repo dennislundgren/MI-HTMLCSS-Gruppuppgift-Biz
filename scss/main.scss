@@ -44,9 +44,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alternative-button {
   @include mixins.gothic;
-  font-size: revert;
+  // font-size: revert;
 }
 
 // Display flex.
@@ -58,7 +59,7 @@ footer {
   @include mixins.flex;
 }
 
-ul{
+ul {
   line-height: 1.2;
 }
 
@@ -295,14 +296,47 @@ header {
   }
 }
 
+// index/home-page
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .home-page {
+    height: 90vh;
+    width: 100%;
+    background-image: url("/assets/background-index-home-page.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      font-size: 1.3rem;
+      padding: 10px;
+    }
+    .alternative {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .alternative-button {
+        @include mixins.button;
+        border-radius: 1px;
+        font-size: 30px;
+        background-color: white;
+      }
+    }
+  }
+}
+
 // Allt sass relevant för mainblocket.
 main {
   padding: 5px;
   gap: 20px;
-
-  .column-reverse {
-    flex-direction: column-reverse;
-  }
 
   // Design för produktheadern i main.
   .product-header {
@@ -334,9 +368,15 @@ main {
         margin: 15px;
         font-size: 25pt;
       }
-
-      li{
+      li {
+        transition: transform ease-in-out 0.2s;
+        list-style: none;
         margin-left: 30px;
+  
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
       }
     }
     }
@@ -391,14 +431,33 @@ main {
       div:nth-child(2) {
         margin-top: 20px;
       }
+
+      // Visar ifall tjänsten är tillgänglig eller ej.
+      .available {
+        color: green;
+      }
+      .not-available {
+        color: red;
+      }
+    }
+  }
+
+  // Stil då vi går över till tablet-storlek.
+  @include mixins.desktop-only {
+    flex-direction: row;
+    padding: 30px;
+
+    section {
+      width: initial;
     }
 
-    // Visar ifall tjänsten är tillgänglig eller ej.
-    .available {
-      color: green;
+    section:first-child {
+      flex-grow: 1;
     }
-    .not-available {
-      color: red;
+
+    section:last-child {
+      flex-grow: 1;
+      flex-basis: 300px;
     }
   }
 
@@ -426,63 +485,48 @@ main {
       flex-direction: column;
     }
   }
-
   // Row-klass i produktsidan.
   .product-row {
     width: 80%;
     row-gap: 60px;
 
   }
-
-  // Stil då vi går över till tablet-storlek.
-  @include mixins.desktop-only {
-    flex-direction: row;
-    padding: 30px;
-
-    section {
-      width: initial;
-    }
-
-    section:first-child {
-      flex-grow: 1;
-    }
-
-    section:last-child {
-      flex-grow: 1;
-      flex-basis: 300px;
-    }
-  }
 }
 
 // Jättefin fot.
+
 footer {
-  background-color: white;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   border-top: variables.$border-main;
-  @include mixins.tablet-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
     width: 80%;
-  }
-  .img-container {
-    width: 20%;
-    margin-top: 40px;
-    img {
+    div {
       width: 100%;
+      .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 100%;
+        p {
+          padding: px;
+        }
+        .fa {
+          padding: 9px;
+          width: 15px;
+        }
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-decoration: none;
+          color: black;
+        }
+      }
     }
-  }
-}
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
-
-  &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
   }
 }
