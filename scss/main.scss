@@ -24,6 +24,14 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+  }
+}
+
 // Default text och storlek för text samt ikoner.
 html,
 body {
@@ -475,7 +483,7 @@ main {
     @include mixins.box;
     border-radius: 5px;
     overflow: hidden;
-    h2{
+    h2 {
       font-size: 19pt;
     }
     img {

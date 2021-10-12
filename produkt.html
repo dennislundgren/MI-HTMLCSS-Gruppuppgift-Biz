@@ -27,11 +27,9 @@
   <body>
     <header>
       <div class="header-img">
-        <img
-          src="assets/logo_big.png"
-          alt="main logo"
-          onclick="window.location.href='index.html'"
-        />
+        <a href="index.html">
+          <img src="assets/logo_big.png" alt="main logo" />
+        </a>
       </div>
       <input type="checkbox" name="menu-btn" id="menu-btn" />
       <div class="burger-wrapper">
@@ -109,13 +107,11 @@
               >
                 Stäng
               </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                onclick="window.location.href='checkout.html'"
-              >
-                Till checkout
-              </button>
+              <a href="checkout.html">
+                <button type="button" class="btn btn-primary">
+                  Till checkout
+                </button>
+              </a>
             </div>
           </div>
         </div>
