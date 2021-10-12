@@ -315,6 +315,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
+
   .home-page {
     height: 90vh;
     width: 100%;
@@ -325,20 +326,40 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     h1 {
       text-align: center;
+      justify-content: center;
+      width: 50%; 
+      padding-bottom: 10px;
+      font-size: 2.2rem;
+      @include mixins.desktop-only {
+        padding-bottom: 45px;
+        font-size: 2.9rem;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+      }
     }
+
     p {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       padding: 10px;
     }
+    
     .alternative {
       width: 100%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      p {
+        font-size: 2.3rem;
+        padding-top: 22px;
+      }
+
       .alternative-button {
         @include mixins.button;
         border-radius: 1px;
@@ -379,7 +400,7 @@ main {
       width: 17%;
       height: 310px;
       border: variables.$border-main;
-      border-radius: variables.$border-radius;
+      // border-radius: variables.$border-radius;
       box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
       h1 {
         margin: 15px;
@@ -389,6 +410,8 @@ main {
         transition: transform ease-in-out 0.2s;
         list-style: none;
         margin-left: 30px;
+        // font-weight: bold;
+        // font-size: 13pt;
 
         &:hover {
           transform: scale(1.1);
@@ -513,39 +536,83 @@ main {
 
 // Jättefin fot.
 
-footer {
-  border-top: variables.$border-main;
+
+.footer-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
-  .footer-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    div {
-      width: 100%;
-      .text-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        width: 100%;
-        p {
-          padding: px;
-        }
-        .fa {
-          padding: 9px;
-          width: 15px;
-        }
-        a {
+
+  footer {
+      border-top: variables.$border-main;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+
+      #info-wrapper {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          text-decoration: none;
-          color: black;
-        }
+          flex-direction: column;
+          @include mixins.desktop-only {
+              flex-direction: row;
+              align-items: baseline;
+              width: 80%;
+          }
+
+          div {
+              width: 100%;
+              @include mixins.tablet-only {
+                  display: flex;
+                  justify-content: center;
+              }
+              .info {
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%;
+                  @include mixins.desktop-only {
+                      width: 75%;
+                      display: flex;
+                      justify-content: center;
+                  }
+
+                  p {
+                      font-size: 1.3rem;
+                      padding: 5pt;
+                      color: black;
+                  }
+
+                  .fa {
+                      padding: 7pt;
+                      width: 35px;
+                  }
+
+                  a {
+                      display: flex;
+                      flex-direction: row;
+                      align-items: left;
+                      text-decoration: none;
+                  }
+              }
+          }
       }
-    }
+      #about-info,
+      #contact-info,
+      #social-info {
+          padding-top: 50pt;
+          
+      }
+  }
+}
+
+.footer-img {
+  width: 100%;
+  transform:scale(0.6);
+  img {
+    width: 100%;
+  }
+  @include mixins.desktop-only {
+    width: 50%;
+    display: flex;
+    justify-content: center;
   }
 }
 
