@@ -353,7 +353,6 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
 main {
   padding: 5px;
   gap: 20px;
-  margin-bottom: 50px;
 }
 main .product-header {
   margin-top: 20px;
@@ -505,6 +504,7 @@ main .product .product-info {
 main .product-row {
   width: 80%;
   row-gap: 60px;
+  margin-bottom: 100px;
 }
 
 .footer-wrapper {

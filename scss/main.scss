@@ -374,7 +374,6 @@ header {
 main {
   padding: 5px;
   gap: 20px;
-  margin-bottom: 50px;
 
   // Design för produktheadern i main.
   .product-header {
@@ -532,6 +531,7 @@ main {
   .product-row {
     width: 80%;
     row-gap: 60px;
+    margin-bottom: 100px;
   }
 }
 
