@@ -65,16 +65,11 @@ ul{
 // All sass relevant för header.
 header {
   background-color: rgba(153, 153, 153, 0.164);
-  height: 80px;
+  height: 120px;
   justify-content: center;
   align-items: center;
   border-bottom: variables.$border-main;
   flex-direction: row;
-
-  // Sökboxen.
-  .search-container {
-    margin-bottom: 15px;
-  }
 
   // Img-header i produkt och index.
   .header-img {
@@ -83,7 +78,7 @@ header {
 
     @include mixins.desktop-only {
       display: inline;
-      height: 80px;
+      height: 100px;
       // margin-top: -10px;
 
       img {
@@ -316,7 +311,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.desktop-only {
-      margin-left: 18.5%;
+      margin-left: 18%;
       margin-top: 0;
     }
   }
@@ -326,19 +321,26 @@ main {
     display: none;
     position: sticky;
     top: 50px;
+    margin-left: -40px;
+    // padding-left: 30px;
     @include mixins.desktop-only {
       display: inline;
-      width: 15%;
-      height: 100%;
+      width: 17%;
+      height: 310px;
       border: variables.$border-main;
       border-radius: variables.$border-radius;
       box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.42);
-      h2 {
-        margin: 14px;
-        margin-left: -12px;
+      h1 {
+        margin: 15px;
+        font-size: 25pt;
+      }
+
+      li{
+        margin-left: 30px;
       }
     }
-  }
+    }
+  
 
   // Default-stil för sektioner i main.
   section {
@@ -427,8 +429,9 @@ main {
 
   // Row-klass i produktsidan.
   .product-row {
-    gap: 20px;
     width: 80%;
+    row-gap: 60px;
+
   }
 
   // Stil då vi går över till tablet-storlek.
