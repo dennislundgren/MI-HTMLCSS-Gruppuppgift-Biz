@@ -33,6 +33,10 @@ body {
   font-size: 16px;
 }
 
+.modal-content [class^=modal] {
+  border: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -196,12 +200,12 @@ header input[type=checkbox] {
   opacity: 0;
   top: 0;
   left: 0;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
 }
 header input[type=checkbox]:checked ~ nav ul {
   position: absolute;
-  top: 80px;
+  top: 120px;
   display: block;
   background-color: white;
   width: 100%;
@@ -226,8 +230,8 @@ header .burger-wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -289,6 +293,9 @@ header input[type=checkbox]:checked ~ .burger-wrapper .burger::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.home-wrapper .home-page h1 {
+  text-align: center;
 }
 .home-wrapper .home-page p {
   text-align: center;
@@ -504,4 +511,10 @@ footer .footer-wrapper div .text-wrapper a {
   align-items: center;
   text-decoration: none;
   color: black;
+}
+
+@media screen and (max-width: 1199px) {
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
 }

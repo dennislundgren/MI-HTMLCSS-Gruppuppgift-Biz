@@ -40,7 +40,7 @@
         />
       </div>
     </header>
-    <main class="column-reverse">
+    <main>
       <!-- En ruta med formulär och beställningsknapp -->
       <section>
         <form class="g-3 needs-validation" action="ordered.html" novalidate>
@@ -657,22 +657,17 @@
               </select>
               <input type="tel" class="form-control" id="tel" required />
             </div>
-            <div class="invalid-feedback">
-              Du kan ju inte lämna detta fält tomt tokstolle!
-            </div>
           </div>
           <div class="col-md-12">
             <label for="adress" class="form-label">Address</label>
             <input type="text" class="form-control" id="adress" required />
-            <div class="valid-feedback">Inte lika fint efternamn!</div>
-            <div class="invalid-feedback">
-              Du kan ju inte lämna detta fält tomt tokstolle!
-            </div>
+            <div class="valid-feedback">Trevligt!</div>
+            <div class="invalid-feedback">Fyll i address.</div>
           </div>
           <div class="col-md-12">
             <label for="state" class="form-label">Stad</label>
             <input type="text" class="form-control" id="state" required />
-            <div class="invalid-feedback">Men nånstans bor du väl?!</div>
+            <div class="invalid-feedback">Fyll i stad.</div>
           </div>
           <div class="col-md-12">
             <label for="zip">Postnummer</label>
@@ -683,7 +678,7 @@
               id="zip"
               required
             />
-            <div class="invalid-feedback">Please select a valid state.</div>
+            <div class="invalid-feedback">Fyll i postnummer.</div>
           </div>
           <div class="col-12">
             <div class="form-check">
@@ -697,9 +692,7 @@
               <label class="form-check-label" for="invalidCheck">
                 Jag har läst igenom policy.
               </label>
-              <div class="invalid-feedback">
-                You must agree before submitting.
-              </div>
+              <div class="invalid-feedback">Klicka i knappen.</div>
             </div>
           </div>
           <div class="col-12">
@@ -713,7 +706,7 @@
       <section>
         <div class="product-checkout">
           <div class="product">
-            <img src="assets/services/woodworker.png" alt="" />
+            <img src="assets/services/finance.png" alt="" />
           </div>
           <div>
             <i class="bi bi-lightning-charge-fill"></i>
