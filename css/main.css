@@ -108,10 +108,10 @@ header .icon-container {
   font-size: 20pt;
   margin: 0 20px 0 20px;
   transition: transform ease-in-out 0.2s;
+  cursor: pointer;
 }
 header .icon-container:hover {
   transform: scale(1.1);
-  cursor: pointer;
 }
 header ul {
   width: 30%;
@@ -128,6 +128,13 @@ header .ul2 .fas.fa-caret-down {
 }
 header .ul2 li:first-child:hover .fas.fa-caret-down {
   transform: rotate(180deg);
+}
+header .ul2 .dropdown-content li {
+  transition: transform ease-in-out 0.2s;
+  cursor: pointer;
+}
+header .ul2 .dropdown-content li:hover {
+  transform: scale(1.05);
 }
 @media screen and (min-width: 1200px) {
   header .ul2 {
@@ -152,19 +159,13 @@ header .ul2 li:first-child:hover .fas.fa-caret-down {
   }
   header .ul2 .dropdown-content li:hover {
     background-color: rgba(153, 153, 153, 0.164);
-  }
-  header .ul2 li {
-    transition: transform ease-in-out 0.2s;
-  }
-  header .ul2 li:hover {
     transform: scale(1.1);
-    cursor: pointer;
   }
-  header .ul2 li.dropdown {
+  header .ul2 .dropdown-content.dropdown {
     position: relative;
     display: inline-block;
   }
-  header .ul2 li.dropdown:hover .dropdown-content {
+  header .ul2 .dropdown-content.dropdown:hover .dropdown-content {
     display: block;
   }
 }
@@ -214,6 +215,7 @@ header input[type=checkbox]:checked ~ nav ul ul {
 header input[type=checkbox]:checked ~ nav ul li:first-child:hover ul,
 header input[type=checkbox]:checked ~ nav ul li:first-child:focus ul {
   display: block;
+  transform: scale(1.05);
 }
 @media screen and (min-width: 1200px) {
   header input[type=checkbox] {
@@ -417,6 +419,14 @@ main .product-row {
     flex-basis: 300px;
   }
 }
+main nav ul li {
+  transition: transform ease-in-out 0.2s;
+  list-style: none;
+  cursor: pointer;
+}
+main nav ul li:hover {
+  transform: scale(1.1);
+}
 
 footer {
   background-color: white;
@@ -440,13 +450,4 @@ footer .img-container {
 }
 footer .img-container img {
   width: 100%;
-}
-
-li {
-  transition: transform ease-in-out 0.2s;
-  list-style: none;
-}
-li:hover {
-  transform: scale(1.1);
-  cursor: pointer;
 }

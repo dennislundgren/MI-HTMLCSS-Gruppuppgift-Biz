@@ -25,7 +25,8 @@
 }
 
 // Default text och storlek för text samt ikoner.
-html {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -55,6 +56,10 @@ main,
 .product-row,
 footer {
   @include mixins.flex;
+}
+
+ul {
+  line-height: 1.2;
 }
 
 // All sass relevant för header.
@@ -295,6 +300,42 @@ header {
   }
 }
 
+// index/home-page
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .home-page {
+    height: 90vh;
+    width: 100%;
+    background-image: url("/assets/background-index-home-page.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      font-size: 1.3rem;
+      padding: 10px;
+    }
+    .alternative {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .alternative-button {
+        @include mixins.button;
+        border-radius: 1px;
+        background-color: white;
+      }
+    }
+  }
+}
+
 // Allt sass relevant för mainblocket.
 main {
   padding: 5px;
@@ -311,7 +352,7 @@ main {
     @include mixins.gothic;
     width: 95%;
     @include mixins.desktop-only {
-      margin-left: 20.5%;
+      margin-left: 18.5%;
       margin-top: 0;
     }
   }
@@ -334,65 +375,64 @@ main {
       }
     }
   }
+}
+// Default-stil för sektioner i main.
+section {
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+  box-shadow: 0 0 2px #999;
 
-  // Default-stil för sektioner i main.
-  section {
-    border-radius: 5px;
-    padding: 30px;
+  // Ytterligare stil för formulär.
+  form {
     width: 100%;
-    box-shadow: 0 0 2px #999;
 
-    // Ytterligare stil för formulär.
-    form {
-      width: 100%;
-
-      input {
-        margin-bottom: 20px;
-      }
-
-      div.row {
-        width: initial;
-        margin: initial;
-        padding: initial;
-        div {
-          min-width: 100px;
-        }
-      }
-      label[for="tel"] {
-        display: block;
-      }
-      .select-menu {
-        .form-select {
-          display: inline-block;
-          width: 80px;
-          height: 38px;
-        }
-        input[type="tel"].form-control {
-          display: inline-block;
-          width: calc(100% - 80px);
-        }
-      }
+    input {
+      margin-bottom: 20px;
     }
 
-    // Bild i checkout för tjänst som beställs.
-    div.product-checkout {
-      text-align: center;
-      width: 100%;
-      i {
-        padding-top: 10px;
-      }
-      div:nth-child(2) {
-        margin-top: 20px;
+    div.row {
+      width: initial;
+      margin: initial;
+      padding: initial;
+      div {
+        min-width: 100px;
       }
     }
+    label[for="tel"] {
+      display: block;
+    }
+    .select-menu {
+      .form-select {
+        display: inline-block;
+        width: 80px;
+        height: 38px;
+      }
+      input[type="tel"].form-control {
+        display: inline-block;
+        width: calc(100% - 80px);
+      }
+    }
+  }
 
-    // Visar ifall tjänsten är tillgänglig eller ej.
-    .available {
-      color: green;
+  // Bild i checkout för tjänst som beställs.
+  div.product-checkout {
+    text-align: center;
+    width: 100%;
+    i {
+      padding-top: 10px;
     }
-    .not-available {
-      color: red;
+    div:nth-child(2) {
+      margin-top: 20px;
     }
+  }
+
+  // Visar ifall tjänsten är tillgänglig eller ej.
+  .available {
+    color: green;
+  }
+  .not-available {
+    color: red;
   }
 
   // Produkter i produktsidan.
@@ -446,29 +486,6 @@ main {
   }
 }
 
-// Jättefin fot.
-footer {
-  background-color: white;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border-top: variables.$border-main;
-  @include mixins.tablet-only {
-    width: 80%;
-  }
-  .img-container {
-    width: 20%;
-    margin-top: 40px;
-    img {
-      width: 100%;
-    }
-  }
-}
-
 li {
   transition: transform ease-in-out 0.2s;
   list-style: none;
@@ -476,5 +493,43 @@ li {
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
+  }
+}
+
+// Jättefin fot.
+
+footer {
+  border-top: variables.$border-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    div {
+      width: 100%;
+      .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 100%;
+        p {
+          padding: px;
+        }
+        .fa {
+          padding: 9px;
+          width: 15px;
+        }
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
   }
 }
