@@ -330,7 +330,7 @@ header {
     h1 {
       text-align: center;
       justify-content: center;
-      width: 50%; 
+      width: 50%;
       padding-bottom: 10px;
       font-size: 2.2rem;
       @include mixins.desktop-only {
@@ -347,7 +347,7 @@ header {
       font-size: 1.5rem;
       padding: 10px;
     }
-    
+
     .alternative {
       width: 100%;
       flex-direction: column;
@@ -537,76 +537,74 @@ main {
 
 // Jättefin fot.
 
-
 .footer-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
 
   footer {
-      border-top: variables.$border-main;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
+    border-top: variables.$border-main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 
-      #info-wrapper {
+    #info-wrapper {
+      display: flex;
+      flex-direction: column;
+      @include mixins.desktop-only {
+        flex-direction: row;
+        align-items: baseline;
+        width: 80%;
+      }
+
+      div {
+        width: 100%;
+        @include mixins.tablet-only {
+          display: flex;
+          justify-content: center;
+        }
+        .info {
           display: flex;
           flex-direction: column;
+          width: 100%;
           @include mixins.desktop-only {
-              flex-direction: row;
-              align-items: baseline;
-              width: 80%;
+            width: 75%;
+            display: flex;
+            justify-content: center;
           }
 
-          div {
-              width: 100%;
-              @include mixins.tablet-only {
-                  display: flex;
-                  justify-content: center;
-              }
-              .info {
-                  display: flex;
-                  flex-direction: column;
-                  width: 100%;
-                  @include mixins.desktop-only {
-                      width: 75%;
-                      display: flex;
-                      justify-content: center;
-                  }
-
-                  p {
-                      font-size: 1.3rem;
-                      padding: 5pt;
-                      color: black;
-                  }
-
-                  .fa {
-                      padding: 7pt;
-                      width: 35px;
-                  }
-
-                  a {
-                      display: flex;
-                      flex-direction: row;
-                      align-items: left;
-                      text-decoration: none;
-                  }
-              }
+          p {
+            font-size: 1.3rem;
+            padding: 5pt;
+            color: black;
           }
+
+          .fa {
+            padding: 7pt;
+            width: 35px;
+          }
+
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            text-decoration: none;
+          }
+        }
       }
-      #about-info,
-      #contact-info,
-      #social-info {
-          padding-top: 50pt;
-          
-      }
+    }
+    #about-info,
+    #contact-info,
+    #social-info {
+      padding-top: 50pt;
+    }
   }
 }
 
 .footer-img {
   width: 100%;
-  transform:scale(0.6);
+  transform: scale(0.6);
   img {
     width: 100%;
   }
